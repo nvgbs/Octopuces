@@ -7,6 +7,7 @@ public class Test
 	{
 		PMainPanel test = new PMainPanel();
 		test.setVisible(true);
+		//Normann a eu droit au compliment de l'année
 	}
 
 }
