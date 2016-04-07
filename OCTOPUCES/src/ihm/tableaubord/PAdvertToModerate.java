@@ -38,8 +38,6 @@ public class PAdvertToModerate extends JPanel {
 		
 		// AdvertRequest.getListUnvalidateAdvert();
 		
-		System.out.println("GIT");
-		
 		
 		
 
