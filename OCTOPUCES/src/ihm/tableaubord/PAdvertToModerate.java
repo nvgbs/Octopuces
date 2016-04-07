@@ -36,7 +36,7 @@ public class PAdvertToModerate extends JPanel {
 		scrollBar.setBounds(1053, 11, 17, 616);
 		add(scrollBar);
 		
-		AdvertRequest.getListUnvalidateAdvert();
+		// AdvertRequest.getListUnvalidateAdvert();
 		
 		
 		
