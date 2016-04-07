@@ -20,8 +20,9 @@ public class PAdvertToModerate extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @throws Exception 
 	 */
-	public PAdvertToModerate() {
+	public PAdvertToModerate() throws Exception {
 		this.setBackground(new Color(56, 146, 184));
 		this.setLayout(null);
 		
@@ -36,7 +37,8 @@ public class PAdvertToModerate extends JPanel {
 		scrollBar.setBounds(1053, 11, 17, 616);
 		add(scrollBar);
 		
-		// AdvertRequest.getListUnvalidateAdvert();
+		PAdvert test = new PAdvert();
+		//AdvertRequest.getListUnvalidateAdvert();
 		
 		
 		

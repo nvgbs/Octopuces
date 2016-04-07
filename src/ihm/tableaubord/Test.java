@@ -3,7 +3,7 @@ package ihm.tableaubord;
 public class Test
 {
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
 		PMainPanel test = new PMainPanel();
 		test.setVisible(true);

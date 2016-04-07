@@ -14,7 +14,7 @@ public class Center_Panel extends JPanel
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public Center_Panel()
+	public Center_Panel() throws Exception
 	{
 		this.setLayout(new BorderLayout());
 		this.setBorder(new LineBorder(Color.WHITE, 10));

@@ -10,7 +10,7 @@ public class PMainPanel extends JFrame
 	private static final long serialVersionUID = 1L;
 		
 	
-	public PMainPanel()
+	public PMainPanel() throws Exception
 	{		
 		this.setTitle("Octopuces v1.0");
 		this.setSize(1366,768);

@@ -1,32 +1,20 @@
 package ihm.tableaubord;
 
 import javax.swing.JPanel;
-import javax.swing.border.MatteBorder;
-import javax.swing.BoxLayout;
-import javax.swing.JEditorPane;
-
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JLabel;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.CardLayout;
-import javax.swing.SpringLayout;
-import net.miginfocom.swing.MigLayout;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.FormSpecs;
-import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class PAdvert extends JPanel
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public PAdvert() {
 		setBackground(Color.WHITE);
 		
@@ -34,8 +22,10 @@ public class PAdvert extends JPanel
 		
 		JLabel label_1 = new JLabel("");
 		
-		JLabel lblNewLabel_2 = new JLabel("Référence :");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+		JLabel Reference = new JLabel("Référence :");
+		Reference.setFont(new Font("Tahoma", Font.BOLD, 13));
+		JLabel Ref = new JLabel("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+		Ref.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		JLabel label_4 = new JLabel("");
 		
@@ -92,7 +82,7 @@ public class PAdvert extends JPanel
 											.addComponent(lblCatgorieDeLannonce)
 											.addGap(114)
 											.addComponent(lblSouscatgorie))
-										.addComponent(lblNewLabel_2))))))
+										.addComponent(Reference))))))
 					.addContainerGap(239, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -121,7 +111,7 @@ public class PAdvert extends JPanel
 							.addGap(36)
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel)
-								.addComponent(lblNewLabel_2))
+								.addComponent(Reference))
 							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel_1)
