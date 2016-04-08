@@ -16,7 +16,7 @@ public class PMainPanel extends JFrame
 		this.setSize(1366,768);
 		this.setLocation(150,150);
 		this.setAlwaysOnTop(true);
-		this.setResizable(false);
+		this.setResizable(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		JPanel tableauBord = (JPanel)this.getContentPane();
 		tableauBord.setLayout(new BorderLayout());

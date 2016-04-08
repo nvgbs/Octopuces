@@ -6,9 +6,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.JScrollBar;
 
 import metier.advert.AdvertRequest;
+import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
 
 
 public class PAdvertToModerate extends JPanel {
@@ -24,20 +28,25 @@ public class PAdvertToModerate extends JPanel {
 	 */
 	public PAdvertToModerate() throws Exception {
 		this.setBackground(new Color(56, 146, 184));
-		this.setLayout(null);
+		setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblAnnoncesAModerer = new JLabel("ANNONCES A MODERER");
-		lblAnnoncesAModerer.setFont(new Font("Arial Black", Font.BOLD, 18));
-		lblAnnoncesAModerer.setForeground(Color.WHITE);
-		lblAnnoncesAModerer.setBackground(new Color(255, 255, 255));
-		lblAnnoncesAModerer.setBounds(56, 11, 281, 42);
-		add(lblAnnoncesAModerer);
+		JLabel lblNewLabel = new JLabel("ANNONCES A MODERER");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 16));
+		lblNewLabel.setForeground(Color.WHITE);
+		add(lblNewLabel, BorderLayout.NORTH);
 		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(1053, 11, 17, 616);
-		add(scrollBar);
+		JLabel LabelQuiSertARien = new JLabel(" ");
+		add(LabelQuiSertARien, BorderLayout.SOUTH);
 		
-		PAdvert test = new PAdvert();
+		PGridLayoutForAdvert gridLayoutForAdvert = new PGridLayoutForAdvert();
+		add(gridLayoutForAdvert, BorderLayout.CENTER);
+		
+		JScrollPane scroll = new JScrollPane(gridLayoutForAdvert);
+		this.add(scroll);
+		repaint();
+		
+		
 		//AdvertRequest.getListUnvalidateAdvert();
 		
 		
