@@ -75,7 +75,7 @@ public class Advert extends DataParent {
 	private List<Picture> picture = null;
 
 	/* Constructor */
-
+		
 	public Advert(Integer id, String title, Integer date, String description, Float price, Boolean phone, Boolean email,
 			Integer state, SubCategory sca, User user) {
 		this.id = id;

@@ -8,7 +8,7 @@ import model.advert.Advert;
 public class AdvertRequest 
 {
 	
-	public void validateAdvert (Advert advert) throws Exception
+	public static void validateAdvert (Advert advert) throws Exception
 	{
 		advert.setState(Advert.VALIDATE_STATE);
 		
@@ -16,7 +16,7 @@ public class AdvertRequest
 	}
 	
 	
-	public void unvalidateAdvert (Advert advert) throws Exception
+	public static void unvalidateAdvert (Advert advert) throws Exception
 	{
 		advert.setState(Advert.UNVALIDATE_STATE);
 		
@@ -25,21 +25,21 @@ public class AdvertRequest
 	
 	
 	
-	public List <Advert> getListWaitAdvert () throws Exception
+	public static List <Advert> getListWaitAdvert () throws Exception
 	{
 		
 			return DaoFactory.getDaoAdvert().readByState(Advert.WAIT_STATE);
 		
 	}
 	
-	public List <Advert> getListUnvalidateAdvert () throws Exception
+	public static List <Advert> getListUnvalidateAdvert () throws Exception
 	{
 		
 			return DaoFactory.getDaoAdvert().readByState(Advert.UNVALIDATE_STATE);	
 
 	}
 	
-	public List <Advert> getListValidateAdvert () throws Exception
+	public static List <Advert> getListValidateAdvert () throws Exception
 	{
 		
 			return DaoFactory.getDaoAdvert().readByState(Advert.VALIDATE_STATE);		
