@@ -18,7 +18,7 @@ public class Appli {
 			// configure hibernate
 			new Configuration().configure().buildSessionFactory();
 			
-			//BaseInit.initData();
+			BaseInit.initData();
 			
 			result = true;
 			
