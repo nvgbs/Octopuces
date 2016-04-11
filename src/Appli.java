@@ -21,7 +21,6 @@ public class Appli {
 			BaseInit.initData();
 			
 			result = true;
-			
 		}
 		catch (Exception e)
 		{
