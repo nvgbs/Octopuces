@@ -1,12 +1,14 @@
 package model.user;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -45,16 +47,20 @@ public class User extends DataParent
 	@NotNull
 	private String password = null;
 	
+	@Column (name = "usr_subscription")
+	@NotNull
+	private Boolean subscription = false;
+	
 	@Column (name = "usr_enable")
 	@NotNull
-	private Boolean enable = true;
+	private Boolean accountEnabled = true;
 	
 	@OneToOne (fetch=FetchType.LAZY)
 	@JoinColumn (name = "con_id")
 	@NotNull
 	private Contact contact = null;
 	
-	@OneToOne (fetch=FetchType.LAZY)
+	@ManyToOne (fetch=FetchType.LAZY)
 	@JoinColumn (name = "rol_id")
 	@NotNull
 	private Role role = null;
@@ -73,6 +79,35 @@ public class User extends DataParent
 		this.password = password;
 		this.contact = contact;
 		this.role = role;		
+	}
+
+
+
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	public Boolean getSubscription() {
+		return subscription;
+	}
+
+
+
+
+	public void setSubscription(Boolean subscription) {
+		this.subscription = subscription;
+	}
+
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 
@@ -155,15 +190,17 @@ public class User extends DataParent
 
 
 
-	public Boolean getEnable() {
-		return enable;
+	
+
+	public Boolean getAccountEnabled() {
+		return accountEnabled;
 	}
 
 
 
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
+	public void setAccountEnabled(Boolean accountEnabled) {
+		this.accountEnabled = accountEnabled;
 	}
 
 

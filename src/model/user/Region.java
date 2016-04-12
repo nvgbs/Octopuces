@@ -15,13 +15,20 @@ import model.DataParent;
 
 public class Region extends DataParent
 {
+	public Region() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 	public static final String NOM_ID = "reg_id";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = NOM_ID)
 	private Integer id = null;
-	
 	
 	
 	@Column (name = "reg_name")

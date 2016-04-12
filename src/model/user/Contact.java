@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -41,23 +42,33 @@ public class Contact extends DataParent
 	@NotNull
 	private String email = null;
 	
-	@OneToOne (fetch=FetchType.LAZY)
-	@JoinColumn(name = "reg_id")
+	@ManyToOne (fetch=FetchType.LAZY)
+	@JoinColumn (name = "reg_id")
 	@NotNull
-	private Region reg = null;
+	private Region region = null;
+	
 	
 	/*Constructor*/
 	
-	public Contact (String zip, String city, String phone, String email, Region reg)
+	public Contact (String zip, String city, String phone, String email, Region region)
 	{
 		
 		this.zip= zip;
 		this.city= city;
 		this.phone= phone;
 		this.email= email;
-		this.reg =reg;
+		this.region = region;
 		
 	}
+
+	
+	
+	public Contact() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -79,9 +90,7 @@ public class Contact extends DataParent
 		return email;
 	}
 
-	public Region getReg_id() {
-		return reg;
-	}
+	
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -103,10 +112,14 @@ public class Contact extends DataParent
 		this.email = email;
 	}
 
-	public void setReg_id(Region reg) {
-		this.reg = reg;
+	public Region getRegion() {
+		return region;
 	}
-	
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
 	
 	
 	

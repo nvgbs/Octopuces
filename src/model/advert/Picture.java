@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -36,22 +37,29 @@ public class Picture extends DataParent
 	@NotNull
 	private String url = null;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn (name = "adv_id")
 	@NotNull
-	private Advert adv = null;
+	private Advert advert = null;
 	
 	
 	
 	/*Constructor*/	
 	
-	public Picture (Integer id, Integer num, String name, String url, Advert adv)
+	public Picture (Integer id, Integer num, String name, String url, Advert advert)
 	{
 		this.id = id;
 		this.num = num;
 		this.name = name;
 		this.url = url;
-		this.adv = adv;
+		this.advert = advert;
+	}
+
+
+
+	public Picture() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 
@@ -104,16 +112,18 @@ public class Picture extends DataParent
 
 
 
-	public Advert getAdv() {
-		return adv;
+	public Advert getAdvert() {
+		return advert;
 	}
 
 
 
-	public void setAdv(Advert adv) {
-		this.adv = adv;
+	public void setAdvert(Advert advert) {
+		this.advert = advert;
 	}
-	
+
+
+
 	
 	
 

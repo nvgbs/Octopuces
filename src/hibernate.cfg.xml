@@ -26,7 +26,8 @@
 		</property>
 
 		<property name="show_sql">true</property>
-		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<property name="hibernate.hbm2ddl.auto">create</property>
 		
 
 		<!-- List of XML mapping files -->
@@ -38,9 +39,8 @@
 		<mapping class = "model.advert.Category"/>
 		<mapping class = "model.advert.Picture"/>
 		<mapping class = "model.advert.SubCategory"/>
-		<mapping class = "model.subscription.Subscription"/>
-		<mapping class = "model.list.AdvertList"/>
-		<mapping class = "model.list.AddList"/>
+		<mapping class = "model.basket.Basket"/>
+		<mapping class = "model.basket.AdvertToBasket"/>
 		
 	</session-factory>
 	

@@ -1,5 +1,7 @@
 package base;
 
+import java.util.Date;
+
 import base.dao.DaoFactory;
 import model.advert.Advert;
 import model.advert.Category;
@@ -15,16 +17,28 @@ public class BaseInit {
 	{
 		
 		Region region = new Region (null, "Hérault");
+		DaoFactory.getDaoRegion().saveOrUpdate(region);
 		
-		Role admin = new Role (0, "Admin");
-		Role moderator = new Role (0, "Moderator");
-		Role user = new Role (0, "User");		
+		Role admin = new Role (Role.NUM_ROLE_ADMINISTRATEUR, "Admin");
+		DaoFactory.getDaoRole().saveOrUpdate(admin);
+		
+		Role moderator = new Role (Role.NUM_ROLE_MODERATEUR, "Moderator");
+		DaoFactory.getDaoRole().saveOrUpdate(moderator);
+		
+		Role user = new Role (Role.NUM_ROLE_USER, "User");		
+		DaoFactory.getDaoRole().saveOrUpdate(user);
 		
 		Contact contact1 = new Contact ("34000", "Montpellier", "0485256369", "normannbadr@gmail.com", region);
 		Contact contact2 = new Contact ("34000", "Montpellier", "0485256369", "isabellerigault@gmail.com", region);
 		Contact contact3 = new Contact ("34000", "Montpellier", "0485256369", "sebgenre@gmail.com", region);
 		Contact contact4 = new Contact ("34000", "Montpellier", "0485256369", "jessykamarty@gmail.com", region);
 		Contact contact5 = new Contact ("34000", "Montpellier", "0485256369", "meynadierjulien@gmail.com", region);
+		
+		DaoFactory.getDaoContact().saveOrUpdate(contact1);
+		DaoFactory.getDaoContact().saveOrUpdate(contact2);
+		DaoFactory.getDaoContact().saveOrUpdate(contact3);
+		DaoFactory.getDaoContact().saveOrUpdate(contact4);
+		DaoFactory.getDaoContact().saveOrUpdate(contact5);
 		
 		
 		User user1 = new User ("Monsieur", "Badr", "Normann", "Nono" , "1603", contact1, admin);
@@ -33,19 +47,6 @@ public class BaseInit {
 		User user4 = new User ("Madame", "Marty", "Jessyka", "Red Fish", "2222", contact4, admin);
 		User user5 = new User ("Monsieur", "Meynadier", "Julien", "Ju", "3333", contact5, admin);
 		
-		
-		DaoFactory.getDaoRegion().saveOrUpdate(region);
-		DaoFactory.getDaoRole().saveOrUpdate(admin);
-		DaoFactory.getDaoRole().saveOrUpdate(moderator);
-		DaoFactory.getDaoRole().saveOrUpdate(user);
-		
-		
-		
-		DaoFactory.getDaoContact().saveOrUpdate(contact1);
-		DaoFactory.getDaoContact().saveOrUpdate(contact2);
-		DaoFactory.getDaoContact().saveOrUpdate(contact3);
-		DaoFactory.getDaoContact().saveOrUpdate(contact4);
-		DaoFactory.getDaoContact().saveOrUpdate(contact5);
 		
 		DaoFactory.getDaoUser().saveOrUpdate(user1);
 		DaoFactory.getDaoUser().saveOrUpdate(user2);
@@ -62,7 +63,8 @@ public class BaseInit {
 		SubCategory subca = new SubCategory(null, "2Roues", cat1);		
 		DaoFactory.getDaoSubCategory().saveOrUpdate(subca);
 	
-		Advert advert1 = new Advert ( null, "Velo",51, "vélo des familles", 500.0f, true, true,0, subca, user1);
+		
+		Advert advert1 = new Advert ("Velo", new Date(), "vélo des familles", 500.0f, true, true, 0, subca, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert1);
 		
 		

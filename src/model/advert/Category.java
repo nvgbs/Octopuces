@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import model.DataParent;
 
@@ -23,15 +24,23 @@ public class Category extends DataParent
 	private Integer id = null;
 	
 	@Column (name = "cat_name")
+	@NotNull
 	private String name = null;
+	
 	
 	
 	/*Constructor*/
 	
 	public Category (Integer id, String name)
 	{
-		this.id = null;
-		this.name = null;
+		this.id = id;
+		this.name = name;
+	}
+
+
+	public Category() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 

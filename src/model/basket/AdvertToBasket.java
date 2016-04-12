@@ -1,6 +1,7 @@
-package model.list;
+package model.basket;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,20 +16,21 @@ import javax.validation.constraints.NotNull;
 import model.advert.Advert;
 
 @Entity
-@Table (name = "add_list")
+@Table (name = "advert_basket")
 
-public class AddList implements Serializable {
+public class AdvertToBasket implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 
+	@Column (name = "adb_date")
+	@NotNull
+	private Date date = null;
+	
 
 	@Id
 	@ManyToOne (fetch = FetchType.LAZY)
-	@JoinColumn (name = "add_adv_id", referencedColumnName = "adv_id")
+	@JoinColumn (name = "adb_adv_id", referencedColumnName = "adv_id")
 	@NotNull
 	private Advert advert = null;
 	
@@ -36,25 +38,22 @@ public class AddList implements Serializable {
 	
 	@Id
 	@ManyToOne (fetch = FetchType.LAZY)
-	@JoinColumn (name = "add_adl_id", referencedColumnName = "adl_id")
+	@JoinColumn (name = "adb_bas_id", referencedColumnName = "bas_id")
 	@NotNull
-	private AdvertList advertList = null;
-	
-	@Column (name = "add_date")
-	@NotNull
-	private Date date = null;
+	private Basket basket = null;
 	
 	
-	
-	
-	public AddList (Advert advert, AdvertList advertList, Date date)
+	public AdvertToBasket (Advert advert, Basket basket, Date date)
 	{
 		this.advert = advert;
-		this.advertList = advertList;
+		this.basket = basket;
 		this.date = date;
 	}
 	
-	
+	public AdvertToBasket ()
+	{
+		super();
+	}
 
 	
 
@@ -70,15 +69,21 @@ public class AddList implements Serializable {
 
 
 
-	public AdvertList getAdvertList() {
-		return advertList;
+	
+
+	public Basket getBasket() {
+		return basket;
 	}
 
 
 
-	public void setAdvertList(AdvertList advertList) {
-		this.advertList = advertList;
+
+
+	public void setBasket(Basket basket) {
+		this.basket = basket;
 	}
+
+
 
 
 

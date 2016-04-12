@@ -47,7 +47,7 @@ public class PAdvertToModerate extends JPanel {
 		repaint();
 		
 		
-		//AdvertRequest.getListUnvalidateAdvert();
+		AdvertRequest.getListUnvalidateAdvert();
 		
 		
 		
@@ -57,4 +57,4 @@ public class PAdvertToModerate extends JPanel {
 	
 	
 	
-}//END
+}

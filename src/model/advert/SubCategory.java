@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -17,7 +18,7 @@ import model.DataParent;
 
 public class SubCategory extends DataParent
 {
-	private static final String NOM_ID = "sca_id";
+	private static final String NOM_ID = "sub_id";
 	
 
 	@Id
@@ -25,23 +26,44 @@ public class SubCategory extends DataParent
 	@Column (name =NOM_ID)
 	private Integer id = null;
 	
-	@Column (name = "sca_name")
+	@Column (name = "sub_name")
 	@NotNull
 	private String name = null;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn (name = "cat_id")
 	@NotNull
-	private Category cat = null;
+	private Category category = null;
 	
 	/*Constructor*/
 	
-	public SubCategory (Integer id, String name, Category cat)
+	public SubCategory (Integer id, String name, Category category)
 	{
 		this.id = id;
 		this.name = name;
-		this.cat = cat;
+		this.category = category;
 	}
+
+	
+	
+	public SubCategory() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -60,11 +82,11 @@ public class SubCategory extends DataParent
 	}
 
 	public Category getCat() {
-		return cat;
+		return category;
 	}
 
 	public void setCat(Category cat) {
-		this.cat = cat;
+		this.category = cat;
 	}
 	
 	

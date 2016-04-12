@@ -1,5 +1,6 @@
 package model.advert;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,12 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import model.DataParent;
+import model.basket.AdvertToBasket;
 import model.user.User;
 
 @Entity
@@ -38,7 +41,7 @@ public class Advert extends DataParent {
 
 	@Column(name = "adv_date")
 	@NotNull
-	private Integer date = null;
+	private Date date = null;
 
 	@Column(name = "adv_description")
 	@NotNull
@@ -60,25 +63,30 @@ public class Advert extends DataParent {
 	@NotNull
 	private Integer state = null;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "sca_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "sub_id")
 	@NotNull
-	private SubCategory sca = null;
+	private SubCategory subCategory = null;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "usr_id")
 	@NotNull
 	private User user = null;
+	
+	@OneToMany(mappedBy = "advert", fetch = FetchType.LAZY)
+	private List<AdvertToBasket> advertBasket = null;
 
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "pic_id")
-	private List<Picture> picture = null;
 
-	/* Constructor */
-		
-	public Advert(Integer id, String title, Integer date, String description, Float price, Boolean phone, Boolean email,
-			Integer state, SubCategory sca, User user) {
-		this.id = id;
+	/* Constructor */	
+	
+
+	public Advert() {
+		super();
+	}
+
+	public Advert(String title, Date date, String description, Float price, Boolean phone, Boolean email,
+			Integer state, SubCategory subCategory, User user) {
+		super();
 		this.title = title;
 		this.date = date;
 		this.description = description;
@@ -86,8 +94,21 @@ public class Advert extends DataParent {
 		this.phone = phone;
 		this.email = email;
 		this.state = state;
-		this.sca = sca;
+		this.subCategory = subCategory;
 		this.user = user;
+		
+	}
+
+	
+	
+	
+	
+	public List<AdvertToBasket> getAdvertBasket() {
+		return advertBasket;
+	}
+
+	public void setAdvertBasket(List<AdvertToBasket> advertBasket) {
+		this.advertBasket = advertBasket;
 	}
 
 	public Integer getId() {
@@ -106,11 +127,13 @@ public class Advert extends DataParent {
 		this.title = title;
 	}
 
-	public Integer getDate() {
+	
+
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(Integer date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
@@ -154,12 +177,13 @@ public class Advert extends DataParent {
 		this.state = state;
 	}
 
-	public SubCategory getSca() {
-		return sca;
+	
+	public SubCategory getSubCategory() {
+		return subCategory;
 	}
 
-	public void setSca(SubCategory sca) {
-		this.sca = sca;
+	public void setSubCategory(SubCategory subCategory) {
+		this.subCategory = subCategory;
 	}
 
 	public User getUser() {
@@ -170,12 +194,6 @@ public class Advert extends DataParent {
 		this.user = user;
 	}
 
-	public List<Picture> getPicture() {
-		return picture;
-	}
-
-	public void setPicture(List<Picture> picture) {
-		this.picture = picture;
-	}
+	
 
 }// END

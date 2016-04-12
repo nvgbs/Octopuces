@@ -5,6 +5,7 @@ package appli;
 import org.hibernate.cfg.Configuration;
 
 import base.BaseInit;
+import ihm.tableaubord.PMainPanel;
 
 
 public class Main {
@@ -13,7 +14,6 @@ public class Main {
 		
 		Boolean result = null;
 
-		
 		try
 		{
 			// configure hibernate
@@ -22,6 +22,9 @@ public class Main {
 			BaseInit.initData();
 			
 			result = true;
+			
+			new PMainPanel().setVisible(true);
+			
 		}
 		catch (Exception e)
 		{
