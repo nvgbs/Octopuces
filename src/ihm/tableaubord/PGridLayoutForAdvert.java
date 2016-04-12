@@ -19,47 +19,19 @@ public class PGridLayoutForAdvert extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	
-	public PGridLayoutForAdvert() throws Exception {
+	public PGridLayoutForAdvert(Integer stateValue) throws Exception {
+		
+		List<Advert> listAdvert = AdvertRequest.getListAdvert(stateValue.intValue());
+		
 		setBackground(new Color(70, 130, 180));
-		GridLayout grid = new GridLayout(50, 1, 0, 10);
+		GridLayout grid = new GridLayout(listAdvert.size(), 1, 0, 10);
 		setLayout(grid);
 		
-		PAdvert test = new PAdvert();
-		this.add(test);
-		PAdvert test2 = new PAdvert();
-		this.add(test2);
-		PAdvert test3 = new PAdvert();
-		this.add(test3);
-		PAdvert test4 = new PAdvert();
-		this.add(test4);
-		PAdvert test5 = new PAdvert();
-		this.add(test5);
-		PAdvert test6 = new PAdvert();
-		this.add(test6);
-		PAdvert test7 = new PAdvert();
-		this.add(test7);
-		
-		showAdvertToModerate();
-
-
-		
-
-
-
-
-		
+		for (Advert advert : listAdvert) {
+			
+			this.add(new PAdvert(advert));
+			
 		}
-	
-	private static void showAdvertToModerate() throws Exception
-	{
-		List<Advert>list;
-		list = AdvertRequest.getListWaitAdvert();
-		System.out.println(list);
-		
-		
 	}
-
-	
-	
 
 }

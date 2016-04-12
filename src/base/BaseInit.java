@@ -34,12 +34,6 @@ public class BaseInit {
 		Contact contact4 = new Contact ("34000", "Montpellier", "0485256369", "jessykamarty@gmail.com", region);
 		Contact contact5 = new Contact ("34000", "Montpellier", "0485256369", "meynadierjulien@gmail.com", region);
 		
-		DaoFactory.getDaoContact().saveOrUpdate(contact1);
-		DaoFactory.getDaoContact().saveOrUpdate(contact2);
-		DaoFactory.getDaoContact().saveOrUpdate(contact3);
-		DaoFactory.getDaoContact().saveOrUpdate(contact4);
-		DaoFactory.getDaoContact().saveOrUpdate(contact5);
-		
 		
 		User user1 = new User ("Monsieur", "Badr", "Normann", "Nono" , "1603", contact1, admin);
 		User user2 = new User ("Madame", "Rigault", "Isabelle", "Isa","0000", contact2, admin);
@@ -47,6 +41,15 @@ public class BaseInit {
 		User user4 = new User ("Madame", "Marty", "Jessyka", "Red Fish", "2222", contact4, admin);
 		User user5 = new User ("Monsieur", "Meynadier", "Julien", "Ju", "3333", contact5, admin);
 		
+		
+		
+		
+		
+		DaoFactory.getDaoContact().saveOrUpdate(contact1);
+		DaoFactory.getDaoContact().saveOrUpdate(contact2);
+		DaoFactory.getDaoContact().saveOrUpdate(contact3);
+		DaoFactory.getDaoContact().saveOrUpdate(contact4);
+		DaoFactory.getDaoContact().saveOrUpdate(contact5);
 		
 		DaoFactory.getDaoUser().saveOrUpdate(user1);
 		DaoFactory.getDaoUser().saveOrUpdate(user2);
@@ -60,13 +63,15 @@ public class BaseInit {
 		DaoFactory.getDaoCategory().saveOrUpdate(cat1);
 		
 		
-		SubCategory subca = new SubCategory(null, "2Roues", cat1);		
+		SubCategory subca = new SubCategory(null, "2 Roues", cat1);		
 		DaoFactory.getDaoSubCategory().saveOrUpdate(subca);
 	
 		
-		Advert advert1 = new Advert ("Velo", new Date(), "vélo des familles", 500.0f, true, true, 0, subca, user1);
+		Advert advert1 = new Advert ("Vélo", new Date(), "vélo des familles", 500.0f, true, true, 0, subca, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert1);
 		
+		Advert advert2 = new Advert ("Moto", new Date(), "moto des familles", 5000.0f, true, true, 0, subca, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert2);
 		
 		
 		return true;

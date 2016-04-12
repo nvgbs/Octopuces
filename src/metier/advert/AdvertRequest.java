@@ -27,32 +27,11 @@ public class AdvertRequest
 	
 	
 	
-	public static List <Advert> getListWaitAdvert () throws Exception
+	public static List <Advert> getListAdvert (Integer stateValue) throws Exception
 	{
-		return DaoFactory.getDaoAdvert().readByState(Advert.WAIT_STATE);
+		return DaoFactory.getDaoAdvert().readByState(stateValue.intValue());
 		
 	}
-	
-	public static List <Advert> getListUnvalidateAdvert () throws Exception
-	{
-		return DaoFactory.getDaoAdvert().readByState(Advert.UNVALIDATE_STATE);	
-
-	}
-	
-	public static List <Advert> getListValidateAdvert () throws Exception
-	{
-		return DaoFactory.getDaoAdvert().readByState(Advert.VALIDATE_STATE);		
-	}
-	
-	
-	public static List<Advert> test() throws Exception
-	{
-		DaoAdvert daoAdvert = new DaoAdvert(); 
-		
-		return (List<Advert>) daoAdvert.readAll(Advert.class);
-	}
-	
-	
 	
 	
 }//END

@@ -9,6 +9,8 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import model.advert.Advert;
+
 public class PAdvert extends JPanel
 {
 	/**
@@ -16,13 +18,11 @@ public class PAdvert extends JPanel
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public PAdvert() {
+	public PAdvert(Advert advert) {
 		setBackground(Color.WHITE);
 		
 		JLabel Reference = new JLabel("Référence :");
 		Reference.setFont(new Font("Tahoma", Font.BOLD, 13));
-		JLabel Ref = new JLabel("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
-		Ref.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		JLabel SubCategory = new JLabel("Sous-catégorie :");
 		SubCategory.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -40,17 +40,18 @@ public class PAdvert extends JPanel
 		JLabel Description = new JLabel("Description :");
 		Description.setFont(new Font("Tahoma", Font.ITALIC, 16));
 		
-		JLabel DateContent = new JLabel("New label");
+		JLabel DateContent = new JLabel(advert.getDate().toString());
 		
-		JLabel TitleContent = new JLabel("New label");
+		JLabel TitleContent = new JLabel(advert.getTitle());
 		
-		JLabel ReferenceContent = new JLabel("New label");
+		JLabel ReferenceContent = new JLabel(String.valueOf(advert.getId()));
 		
-		JLabel CategoryContent = new JLabel("New label");
+		JLabel CategoryContent = new JLabel(advert.getSubCategory().getCategory().getName());
 		
-		JLabel SubCategoryContent = new JLabel("New label");
+		JLabel SubCategoryContent = new JLabel(advert.getSubCategory().getName());
 		
-		JLabel DescriptionContent = new JLabel("New label");
+		JLabel DescriptionContent = new JLabel(advert.getDescription());
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

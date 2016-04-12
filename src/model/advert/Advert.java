@@ -27,9 +27,9 @@ public class Advert extends DataParent {
 	public static final Integer WAIT_STATE = 0;
 	public static final Integer VALIDATE_STATE = 1;
 	public static final Integer UNVALIDATE_STATE = 2;
+	
 	public static final String NOM_ID = "adv_id";
-	public static final String NOM_STATE = "adv_state";
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = NOM_ID)
@@ -63,7 +63,7 @@ public class Advert extends DataParent {
 	@NotNull
 	private Integer state = null;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "sub_id")
 	@NotNull
 	private SubCategory subCategory = null;

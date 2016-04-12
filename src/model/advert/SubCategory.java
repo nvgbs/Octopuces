@@ -81,14 +81,6 @@ public class SubCategory extends DataParent
 		this.name = name;
 	}
 
-	public Category getCat() {
-		return category;
-	}
-
-	public void setCat(Category cat) {
-		this.category = cat;
-	}
-	
 	
 	
 	

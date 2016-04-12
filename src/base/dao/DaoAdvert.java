@@ -1,6 +1,7 @@
 package base.dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -14,15 +15,14 @@ public class DaoAdvert extends DaoParent
 {
 	
 	
-	public List<Advert> readByState(Integer state)throws Exception
+	public List<Advert> readByState(Integer stateValue)throws Exception
 	{
 
 		Session session = BaseSession.getNewSession();
 
 		Criteria criteria = session.createCriteria(Advert.class);
-		criteria.add(Restrictions.eq(Advert.NOM_STATE, state.intValue()));
+		criteria.add(Restrictions.eq("state", stateValue.intValue()));
 
-		@SuppressWarnings("unchecked")
 		ArrayList<Advert> listResult = (ArrayList<Advert>) criteria.list();
 
 		session.close();
