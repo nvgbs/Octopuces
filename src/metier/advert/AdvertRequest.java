@@ -4,7 +4,7 @@ import java.util.List;
 
 import base.dao.DaoAdvert;
 import base.dao.DaoFactory;
-import ihm.tableaubord.Test;
+
 import model.advert.Advert;
 
 public class AdvertRequest 
@@ -32,6 +32,11 @@ public class AdvertRequest
 		return DaoFactory.getDaoAdvert().readByState(stateValue.intValue());
 		
 	}
+	
+	
+	
+	
+	
 	
 	
 }//END

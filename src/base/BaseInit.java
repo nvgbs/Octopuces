@@ -67,11 +67,23 @@ public class BaseInit {
 		DaoFactory.getDaoSubCategory().saveOrUpdate(subca);
 	
 		
-		Advert advert1 = new Advert ("Vélo", new Date(), "vélo des familles", 500.0f, true, true, 0, subca, user1);
+		Advert advert1 = new Advert ("Vélo", new Date(), "Vélo des familles", 500.0f, true, true, 0, subca, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert1);
 		
-		Advert advert2 = new Advert ("Moto", new Date(), "moto des familles", 5000.0f, true, true, 0, subca, user1);
+		Advert advert2 = new Advert ("Moto", new Date(), "Moto des familles", 1000.0f, true, true, 1, subca, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert2);
+		
+		Advert advert3 = new Advert ("Voiture", new Date(), "Voiture des familles", 2000.0f, true, true, 2, subca, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert3);
+		
+		Advert advert4 = new Advert ("Jet Ski", new Date(), "Jet Ski des familles", 1200.0f, true, true, 0, subca, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert4);
+		
+		Advert advert5 = new Advert ("Camion", new Date(), "Camion des familles", 3000.0f, true, true, 1, subca, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert5);
+		
+		Advert advert6 = new Advert ("Camionnette", new Date(), "Camionnette des familles", 1500.0f, true, true, 2, subca, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert6);
 		
 		
 		return true;

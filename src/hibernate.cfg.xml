@@ -16,7 +16,7 @@
 
 		<!-- Assume test is the database name -->
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/octopuces
+			jdbc:mysql://127.0.0.1:3306/octopuces
 		</property>
 		<property name="hibernate.connection.username">
 			root

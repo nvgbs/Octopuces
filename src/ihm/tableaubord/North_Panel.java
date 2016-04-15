@@ -20,7 +20,7 @@ public class North_Panel extends JPanel
 
 	public North_Panel()
 	{
-		this.setBackground(new Color(56, 146, 184));
+		this.setBackground(new Color(70, 130, 180));
 		this.setBounds(0, 48, 1024, 102);
 		this.setLayout(new FlowLayout(FlowLayout.CENTER, 380, 20));
 				

@@ -1,4 +1,4 @@
-package ihm.pageconnexion;
+/*package ihm.pageconnexion;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -18,14 +18,10 @@ public class Frame extends JFrame
   
   
 	private JPanel contentPane;
-	/**
-	 * @wbp.nonvisual location=151,-1
-	 */
+	
 	private final JLabel label = DefaultComponentFactory.getInstance().createTitle("New JGoodies title");
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		try
 		{
@@ -51,9 +47,7 @@ public class Frame extends JFrame
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public Frame()
 	{
 		setAlwaysOnTop(true);
@@ -76,4 +70,4 @@ public class Frame extends JFrame
 		
 	}
 
-}
+}*/
