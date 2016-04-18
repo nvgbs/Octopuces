@@ -18,16 +18,13 @@ import javax.swing.JScrollPane;
 
 
 public class PAllAdvert extends JPanel {
-	/**
-	 * 
-	 */
+	
+	
 	private static final long serialVersionUID = 1L;
 	
+	Integer stateValue = null;
 
-	/**
-	 * Create the panel.
-	 * @throws Exception 
-	 */
+	
 	public PAllAdvert(String title, Integer stateValue) throws Exception 
 	{
 		this.setBackground(new Color(70, 130, 180));
@@ -55,8 +52,16 @@ public class PAllAdvert extends JPanel {
 		
 
 	}
+
+
+	public Integer getStateValue() {
+		return stateValue;
+	}
 	
-	
+	public void setStateValue (Integer stateValue)
+	{
+		this.stateValue = stateValue;
+	}
 	
 	
 }

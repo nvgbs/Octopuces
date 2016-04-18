@@ -30,9 +30,9 @@ public class PBoardTable extends JPanel
 		nbAdvertLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		add(nbAdvertLabel, BorderLayout.CENTER);
 		
-		List<Advert> listAdvert = AdvertRequest.getListAdvert(0);
+		List<Advert> listAdvert = AdvertRequest.getListAdvert(Advert.WAIT_STATE);
 		
-		Integer nbAdvertVar = 1 + listAdvert.size();
+		Integer nbAdvertVar = listAdvert.size();
 		
 		if (nbAdvertVar == 1)
 		{

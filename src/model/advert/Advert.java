@@ -28,6 +28,7 @@ public class Advert extends DataParent {
 	public static final Integer VALIDATE_STATE = 1;
 	public static final Integer UNVALIDATE_STATE = 2;
 	
+	
 	public static final String NOM_ID = "adv_id";
 	
 	@Id

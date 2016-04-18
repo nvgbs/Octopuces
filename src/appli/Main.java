@@ -10,7 +10,8 @@ import ihm.tableaubord.PMainPanel;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		
 		Boolean result = null;
 
@@ -39,4 +40,4 @@ public class Main {
 
 	}
 
-}
+}//END
