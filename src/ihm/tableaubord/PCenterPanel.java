@@ -26,7 +26,7 @@ public class PCenterPanel extends JPanel
 	{
 		this.setLayout(new BorderLayout());
 		this.setBorder(new LineBorder(Color.WHITE, 10));
-		this.setBackground(new Color(56, 146, 184));
+		this.setBackground(new Color(70, 130, 180));
 				
 		// this.add(new PAllAdvert(TITLE_WAIT, Advert.WAIT_STATE), BorderLayout.CENTER);
 		// this.add(new PAllAdvert(TITLE_VALIDATE, Advert.VALIDATE_STATE), BorderLayout.CENTER);

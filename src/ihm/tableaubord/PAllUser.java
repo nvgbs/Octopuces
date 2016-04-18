@@ -16,7 +16,7 @@ public class PAllUser extends JPanel
 	
 	public PAllUser(String title) throws Exception
 	{
-		this.setBackground(new Color(56, 146, 184));
+		this.setBackground(new Color(70, 130, 180));
 		setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblTitle = new JLabel(title);
