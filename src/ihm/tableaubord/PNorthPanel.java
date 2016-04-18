@@ -9,14 +9,14 @@ import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import javax.swing.ImageIcon;
 
-public class North_Panel extends JPanel
+public class PNorthPanel extends JPanel
 {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public North_Panel()
+	public PNorthPanel()
 	{
 		this.setBackground(new Color(70, 130, 180));
 		this.setBounds(0, 48, 1024, 102);
@@ -31,7 +31,7 @@ public class North_Panel extends JPanel
 		JLabel lblNewLabel = new JLabel("Aide");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 15));
-		lblNewLabel.setIcon(new ImageIcon(North_Panel.class.getResource("/img/Icone_Aide_20x20.png")));
+		lblNewLabel.setIcon(new ImageIcon(PNorthPanel.class.getResource("/img/Icone_Aide_20x20.png")));
 		add(lblNewLabel);
 		
 	}

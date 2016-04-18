@@ -25,7 +25,7 @@ public class PMainPanel extends JFrame
 		PCenterPanel centerPanel = new PCenterPanel();
 		
 		tableauBord.add(new PLeftPanel(centerPanel), BorderLayout.WEST);
-		tableauBord.add(new North_Panel(), BorderLayout.NORTH);
+		tableauBord.add(new PNorthPanel(), BorderLayout.NORTH);
 		tableauBord.add(centerPanel, BorderLayout.CENTER);
 	}
 	
