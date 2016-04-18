@@ -42,7 +42,7 @@ public class PLeftPanel extends JPanel
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);
 		
-		
+		boardTableBtn.addActionListener(menuListener);
 		boardTableBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Tableau_20x20.png")));
 		boardTableBtn.setIconTextGap(47);
 		boardTableBtn.setForeground(new Color(70, 130, 180));

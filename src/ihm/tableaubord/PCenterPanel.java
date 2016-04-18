@@ -19,6 +19,7 @@ public class PCenterPanel extends JPanel
 	public static final String TITLE_WAIT = "ANNONCES A MODERER";
 	public static final String TITLE_VALIDATE = "ANNONCES VALIDEES";
 	public static final String TITLE_UNVALIDATE = "ANNONCES REFUSEES";
+	public static final String TITLE_BOARD = "TABLEAU DE BORD";
 	
 	
 

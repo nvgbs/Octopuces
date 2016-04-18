@@ -9,6 +9,7 @@ import javax.swing.SwingUtilities;
 import ihm.tableaubord.PCenterPanel;
 import ihm.tableaubord.PLeftPanel;
 import ihm.tableaubord.PAllAdvert;
+import ihm.tableaubord.PBoardTable;
 import model.advert.Advert;
 
 public class ActionMenuListener implements ActionListener
@@ -56,6 +57,15 @@ public class ActionMenuListener implements ActionListener
 		{
 			try {
 				getActionRefuseAdvertBtn (e);
+			} catch (Exception e1) {
+				
+				e1.printStackTrace();
+			}
+		}
+		else if (e.getSource() == leftPanel.getBoardTableBtn())
+		{
+			try {
+				getActionBoardTableBtn(e);
 			} catch (Exception e1) {
 				
 				e1.printStackTrace();
@@ -112,6 +122,14 @@ public class ActionMenuListener implements ActionListener
 	}
 	
 	
+	public void getActionBoardTableBtn (ActionEvent e) throws Exception
+	{
+		PBoardTable pBoardTable = new PBoardTable ();
+		
+		centerPanel.removeAll();
+		centerPanel.add(pBoardTable, BorderLayout.CENTER);
+		centerPanel.updateUI();
+	}
 	
 	
 }//END
