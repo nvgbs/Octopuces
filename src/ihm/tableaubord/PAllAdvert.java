@@ -6,13 +6,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.GridLayout;
-
-import javax.swing.JScrollBar;
-
-import metier.advert.AdvertRequest;
-import model.advert.Advert;
-
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 

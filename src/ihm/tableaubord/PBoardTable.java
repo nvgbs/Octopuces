@@ -1,24 +1,21 @@
 package ihm.tableaubord;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
+import javax.swing.JPanel;
 import metier.advert.AdvertRequest;
 import model.advert.Advert;
-
 import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
 import java.util.List;
-import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
 public class PBoardTable extends JPanel 
 {
+	
+	private static final long serialVersionUID = 1L;
+
 	public PBoardTable() throws Exception
 	{
 		setBackground(new Color(70, 130, 180));

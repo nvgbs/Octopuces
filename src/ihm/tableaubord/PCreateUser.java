@@ -5,7 +5,6 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.MatteBorder;
-
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
@@ -13,25 +12,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.CompoundBorder;
-import javax.swing.JEditorPane;
-import javax.swing.JScrollPane;
-import javax.swing.JScrollBar;
+
 
 public class PCreateUser extends JPanel {
-	private JTextField textField;
-	private JTextField textField_2;
+	
+	private static final long serialVersionUID = 1L;
+	
 
-	/**
-	 * Create the panel.
-	 */
+	
 	public PCreateUser() {
 		setBackground(new Color(255, 255, 255));
 		setLayout(null);

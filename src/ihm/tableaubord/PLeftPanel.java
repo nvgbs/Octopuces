@@ -112,7 +112,7 @@ public class PLeftPanel extends JPanel
 		gbc_createUserBtn.gridy = 4;
 		this.add(createUserBtn, gbc_createUserBtn);
 		
-		
+		listUserBtn.addActionListener(menuListener);
 		listUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
 		listUserBtn.setIconTextGap(49);
 		listUserBtn.setForeground(new Color (70, 130, 180));

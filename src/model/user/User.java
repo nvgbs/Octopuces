@@ -55,12 +55,12 @@ public class User extends DataParent
 	@NotNull
 	private Boolean accountEnabled = true;
 	
-	@OneToOne (fetch=FetchType.LAZY)
+	@OneToOne (fetch=FetchType.EAGER)
 	@JoinColumn (name = "con_id")
 	@NotNull
 	private Contact contact = null;
 	
-	@ManyToOne (fetch=FetchType.LAZY)
+	@ManyToOne (fetch=FetchType.EAGER)
 	@JoinColumn (name = "rol_id")
 	@NotNull
 	private Role role = null;
@@ -86,7 +86,7 @@ public class User extends DataParent
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 

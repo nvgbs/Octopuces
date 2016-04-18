@@ -3,11 +3,9 @@ package ihm.tableaubord;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import actionlistener.ActionMenuListener;
-import model.advert.Advert;
+
 
 public class PCenterPanel extends JPanel
 {
@@ -18,9 +16,8 @@ public class PCenterPanel extends JPanel
 	
 	public static final String TITLE_WAIT = "ANNONCES A MODERER";
 	public static final String TITLE_VALIDATE = "ANNONCES VALIDEES";
-	public static final String TITLE_UNVALIDATE = "ANNONCES REFUSEES";
-	public static final String TITLE_BOARD = "TABLEAU DE BORD";
-	
+	public static final String TITLE_UNVALIDATE = "ANNONCES REFUSEES";	
+	public static final String TITLE_LIST_USER = "LISTE DES UTILISATEURS";
 	
 
 	

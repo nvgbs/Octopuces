@@ -1,15 +1,8 @@
 package ihm.tableaubord;
 
 import javax.swing.JPanel;
-
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.List;
-
-import javax.swing.JList;
-import javax.swing.JScrollPane;
-
-import javassist.bytecode.annotation.EnumMemberValue;
 import metier.advert.AdvertRequest;
 import model.advert.Advert;
 

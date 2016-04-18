@@ -9,19 +9,13 @@ import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JTextPane;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+
 
 public class PTypeUser extends JPanel {
-	/**
-	 * @wbp.nonvisual location=73,324
-	 */
 	
+	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Create the panel.
-	 */
+	
 	public PTypeUser() {
 		setLayout(null);
 		

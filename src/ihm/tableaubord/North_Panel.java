@@ -7,8 +7,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
 public class North_Panel extends JPanel

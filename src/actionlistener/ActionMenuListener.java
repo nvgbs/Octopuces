@@ -3,12 +3,10 @@ package actionlistener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.SwingUtilities;
-
 import ihm.tableaubord.PCenterPanel;
 import ihm.tableaubord.PLeftPanel;
 import ihm.tableaubord.PAllAdvert;
+import ihm.tableaubord.PAllUser;
 import ihm.tableaubord.PBoardTable;
 import model.advert.Advert;
 
@@ -68,6 +66,17 @@ public class ActionMenuListener implements ActionListener
 				getActionBoardTableBtn(e);
 			} catch (Exception e1) {
 				
+				e1.printStackTrace();
+			}
+		}
+		else if (e.getSource() == leftPanel.getListUserBtn())
+		{
+			try 
+			{
+				getActionListUserBtn (e);
+			} 
+			catch (Exception e1) 
+			{				
 				e1.printStackTrace();
 			}
 		}
@@ -131,5 +140,13 @@ public class ActionMenuListener implements ActionListener
 		centerPanel.updateUI();
 	}
 	
+	public void getActionListUserBtn (ActionEvent e) throws Exception
+	{
+		PAllUser pAllUser = new PAllUser (PCenterPanel.TITLE_LIST_USER);
+		
+		centerPanel.removeAll();
+		centerPanel.add(pAllUser, BorderLayout.CENTER);
+		centerPanel.updateUI();
+	}
 	
 }//END
