@@ -13,36 +13,7 @@ public class FrameAjoutCompte extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		
-		try
-		{
-			UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
-		}
-		
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FrameAjoutCompte frame = new FrameAjoutCompte();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
 	public FrameAjoutCompte() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 639, 690);
@@ -52,7 +23,7 @@ public class FrameAjoutCompte extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		AjoutComptePanel panelAjoutCompte = new AjoutComptePanel();
+		PAddAccount panelAjoutCompte = new PAddAccount();
 		contentPane.add(panelAjoutCompte);
 	}
 

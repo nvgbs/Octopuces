@@ -57,7 +57,6 @@ public class User extends DataParent
 	
 	@OneToOne (fetch=FetchType.EAGER)
 	@JoinColumn (name = "con_id")
-	@NotNull
 	private Contact contact = null;
 	
 	@ManyToOne (fetch=FetchType.EAGER)
