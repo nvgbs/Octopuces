@@ -32,27 +32,85 @@ public class CreateUserListener implements ActionListener
 		}
 	}
 
-	private User getAddUser(ActionEvent e) throws Exception
+	private void getAddUser(ActionEvent e) throws Exception
 	{
-		User user = new User("Monsieur", "tset", "tset", "Nono" , "1603");
+		
+		
+		String name = null;
+		String firstName = null;
+		String login = null;
+		String password = null;
+		
+		
 		
 		String civility = pAddAccount.getComboBoxCivility().getSelectedItem().toString();
+			
+			if (pAddAccount.getTextFieldName().getText().length() > 0)
+			{
+				name = pAddAccount.getTextFieldName().getText();
+				
+				if (pAddAccount.getTextFieldFirstName().getText().length() > 0)
+				{
+					firstName = pAddAccount.getTextFieldName().getText();
+					
+					if (pAddAccount.getTextFieldLogin().getText().length() > 0)
+					{
+						login = pAddAccount.getTextFieldLogin().getText();
+						
+						if ((pAddAccount.getPasswordFieldPassword().getPassword().length > 0) && (pAddAccount.getPasswordFieldPasswordRepeat().getPassword().length > 0))					
+						{
+							
+							if (new String (pAddAccount.getPasswordFieldPassword().getPassword()).equals(new String (pAddAccount.getPasswordFieldPasswordRepeat().getPassword())))
+							{
+								password = new String (pAddAccount.getPasswordFieldPassword().getPassword());								
+								
+								User user = new User(civility, firstName, name, login , password);								
+								
+								UserRequest.addUser(user);
+								pAddAccount.removeAll();
+							}
+							else
+							{
+								pAddAccount.getLblPasswordFail().setText("Vos mots de passe ne correspondent pas");
+							}					
+						}
+						else
+						{
+							pAddAccount.getLblPasswordFail().setText("Un des champs n'est pas renseigné");
+						}						
+					}
+					else
+					{
+						pAddAccount.getLblLoginFail().setText("Ce champ doit être renseigné");
+					}
+				}
+				else
+				{
+					pAddAccount.getLblFirstNameFail().setText("Ce champ doit être renseigné");
+				}
+			}
+			else
+			{
+				pAddAccount.getLblNameFail().setText("Ce champ doit être renseigné");
+			}
 		
-		String name = pAddAccount.getTextFieldName().getText();
-		
-		String firstName = pAddAccount.getTextFieldName().getText();
-		
-		String Login = pAddAccount.getTextFieldLogin().getText();
-		
-		//String password = pAddAccount.getPasswordFieldPassword().getText();
 		
 		
 		
-		Integer role;
+			
 		
 		
 		
-		return UserRequest.addUser(user);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	/*if (pAddAccount.getPasswordFieldPassword() != pAddAccount.getPasswordFieldPasswordRepeat())

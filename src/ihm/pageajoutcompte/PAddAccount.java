@@ -36,7 +36,12 @@ public class PAddAccount extends JPanel {
 	private JPasswordField PasswordFieldPasswordRepeat = new JPasswordField();
 	private JCheckBox chckbxAdmin = new JCheckBox("Administrateur");
 	private JButton buttonAddUser = new JButton("");
-	JLabel lblPasswordFail = new JLabel("");
+	
+	
+	private JLabel lblPasswordFail = new JLabel("");	
+	private JLabel lblLoginFail = new JLabel();
+	private JLabel lblFirstNameFail = new JLabel();
+	private JLabel lblNameFail = new JLabel();
 		
 
 	@SuppressWarnings("rawtypes")
@@ -180,6 +185,21 @@ public class PAddAccount extends JPanel {
 		lblPasswordFail.setBounds(288, 510, 262, 14);
 		add(lblPasswordFail);
 		
+	
+		lblNameFail.setForeground(Color.RED);
+		lblNameFail.setBounds(346, 280, 262, 14);
+		add(lblNameFail);
+		
+		
+		lblFirstNameFail.setForeground(Color.RED);
+		lblFirstNameFail.setBounds(336, 341, 272, 14);
+		add(lblFirstNameFail);
+		lblLoginFail.setForeground(Color.RED);
+		
+	
+		lblLoginFail.setBounds(336, 402, 272, 14);
+		add(lblLoginFail);
+		
 		
 		
 		
@@ -193,6 +213,111 @@ public class PAddAccount extends JPanel {
 		
 
 	}
+
+	
+	
+	
+	
+	
+	
+
+	public void setTextFieldLogin(JTextField textFieldLogin) {
+		this.textFieldLogin = textFieldLogin;
+	}
+
+
+
+
+
+
+
+
+	public void setLblCivility(JLabel lblCivility) {
+		this.lblCivility = lblCivility;
+	}
+
+
+
+
+
+
+
+
+	public void setComboBoxCivility(JComboBox comboBoxCivility) {
+		this.comboBoxCivility = comboBoxCivility;
+	}
+
+
+
+
+
+
+
+
+	public void setTextFieldName(JTextField textFieldName) {
+		this.textFieldName = textFieldName;
+	}
+
+
+
+
+
+
+
+
+	public void setTextFieldFirstName(JTextField textFieldFirstName) {
+		this.textFieldFirstName = textFieldFirstName;
+	}
+
+
+
+
+
+
+
+
+	public void setPasswordFieldPassword(JPasswordField passwordFieldPassword) {
+		PasswordFieldPassword = passwordFieldPassword;
+	}
+
+
+
+
+
+
+
+
+	public void setPasswordFieldPasswordRepeat(JPasswordField passwordFieldPasswordRepeat) {
+		PasswordFieldPasswordRepeat = passwordFieldPasswordRepeat;
+	}
+
+
+
+
+
+
+
+
+	public void setChckbxAdmin(JCheckBox chckbxAdmin) {
+		this.chckbxAdmin = chckbxAdmin;
+	}
+
+
+
+
+
+
+
+
+	public void setLblPasswordFail(JLabel lblPasswordFail) {
+		this.lblPasswordFail = lblPasswordFail;
+	}
+
+
+
+
+
+
 
 
 	public JTextField getTextFieldLogin() {
@@ -241,5 +366,73 @@ public class PAddAccount extends JPanel {
 	public JLabel getLblPasswordFail() {
 		return lblPasswordFail;
 	}
+
+
+
+
+
+
+
+
+	public JLabel getLblLoginFail() {
+		return lblLoginFail;
+	}
+
+
+
+
+
+
+
+
+	public void setLblLoginFail(JLabel lblLoginFail) {
+		this.lblLoginFail = lblLoginFail;
+	}
+
+
+
+
+
+
+
+
+	public JLabel getLblFirstNameFail() {
+		return lblFirstNameFail;
+	}
+
+
+
+
+
+
+
+
+	public void setLblFirstNameFail(JLabel lblFirstNameFail) {
+		this.lblFirstNameFail = lblFirstNameFail;
+	}
+
+
+
+
+
+
+
+
+	public JLabel getLblNameFail() {
+		return lblNameFail;
+	}
+
+
+
+
+
+
+
+
+	public void setLblNameFail(JLabel lblNameFail) {
+		this.lblNameFail = lblNameFail;
+	}
+	
+	
 	
 }
