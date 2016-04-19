@@ -1,6 +1,7 @@
 package ihm.pageajoutcompte;
 
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import java.awt.Color;
@@ -27,8 +28,8 @@ public class PAddAccount extends JPanel {
 	private JComboBox comboBox = new JComboBox(civilite);
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldFirstName = new JTextField();
-	private JTextField textFieldPassword = new JTextField();
-	private JTextField textFieldPassword2 = new JTextField();
+	private JPasswordField PasswordFieldPassword = new JPasswordField();
+	private JPasswordField PasswordFieldPassword2 = new JPasswordField();
 	private JCheckBox chckbxAdmin = new JCheckBox("Droit Administrateur");
 	private JCheckBox chckbxModerator = new JCheckBox("Droit Modérateur");
 	private JButton buttonAddUser = new JButton("");
@@ -101,12 +102,12 @@ public class PAddAccount extends JPanel {
 		add(lblPassword);
 		
 		
-		textFieldPassword.setBackground(new Color(255, 255, 255));
-		textFieldPassword.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
-		textFieldPassword.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
-		textFieldPassword.setBounds(60, 468, 206, 23);
-		add(textFieldPassword);
-		textFieldPassword.setColumns(10);
+		PasswordFieldPassword.setBackground(new Color(255, 255, 255));
+		PasswordFieldPassword.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
+		PasswordFieldPassword.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
+		PasswordFieldPassword.setBounds(60, 468, 206, 23);
+		add(PasswordFieldPassword);
+		PasswordFieldPassword.setColumns(10);
 		
 		JLabel lblPassword2 = new JLabel("Confirmer mot de passe");
 		lblPassword2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -117,12 +118,12 @@ public class PAddAccount extends JPanel {
 		
 		
 		
-		textFieldPassword2.setBackground(new Color(255, 255, 255));
-		textFieldPassword2.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
-		textFieldPassword2.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
-		textFieldPassword2.setBounds(60, 539, 206, 23);
-		add(textFieldPassword2);
-		textFieldPassword2.setColumns(10);
+		PasswordFieldPassword2.setBackground(new Color(255, 255, 255));
+		PasswordFieldPassword2.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
+		PasswordFieldPassword2.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
+		PasswordFieldPassword2.setBounds(60, 539, 206, 23);
+		add(PasswordFieldPassword2);
+		PasswordFieldPassword2.setColumns(10);
 		
 		JLabel lblDroitAcces = new JLabel("Ajouter droit d'accès");
 		lblDroitAcces.setHorizontalAlignment(SwingConstants.LEFT);
@@ -190,6 +191,56 @@ public class PAddAccount extends JPanel {
 		
 		
 
+	}
+
+
+	public JTextField getTextFieldLogin() {
+		return textFieldLogin;
+	}
+
+
+	public JLabel getLblCivility() {
+		return lblCivility;
+	}
+
+
+	public JComboBox getComboBox() {
+		return comboBox;
+	}
+
+
+	public JTextField getTextFieldName() {
+		return textFieldName;
+	}
+
+
+	public JTextField getTextFieldFirstName() {
+		return textFieldFirstName;
+	}
+
+
+	public JPasswordField getPasswordFieldPassword() {
+		return PasswordFieldPassword;
+	}
+
+
+	public JPasswordField getPasswordFieldPassword2() {
+		return PasswordFieldPassword2;
+	}
+
+
+	public JCheckBox getChckbxAdmin() {
+		return chckbxAdmin;
+	}
+
+
+	public JCheckBox getChckbxModerator() {
+		return chckbxModerator;
+	}
+
+
+	public JButton getButtonAddUser() {
+		return buttonAddUser;
 	}
 	
 	
