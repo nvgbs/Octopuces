@@ -79,10 +79,20 @@ public class User extends DataParent
 		this.role = role;		
 	}
 
+	public User (String civility, String name, String firstName, String login, String password)
+	{	
+		super();
+		this.civility = civility;
+		this.name = name;
+		this.firstName = firstName;
+		this.login = login;	
+		this.password = password;
+			
+	}
 
 
-
-	public User() {
+	public User() 
+	{
 		super();
 		
 	}

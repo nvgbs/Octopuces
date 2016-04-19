@@ -23,9 +23,12 @@ public class Main {
 			
 			//BaseInit.initData();
 			
+			new FrameAjoutCompte().setVisible(true);
+			
+			//new PMainPanel().setVisible(true);
+			
 			result = true;
-	new FrameAjoutCompte().setVisible(true);		
-//			new PMainPanel().setVisible(true);
+			
 			
 		}
 		catch (Exception e)

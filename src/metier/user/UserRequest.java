@@ -15,6 +15,9 @@ public class UserRequest
 		return (List<User>) DaoFactory.getDaoUser().readAll(User.class);			
 	}
 		
+	
+	
+	
 	public static User addUser(User user) throws Exception
 	{
 		return DaoFactory.getDaoUser().save(user);
