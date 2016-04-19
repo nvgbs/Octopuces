@@ -20,7 +20,7 @@ public class Main {
 			// configure hibernate
 			new Configuration().configure().buildSessionFactory();
 			
-			BaseInit.initData();
+			//BaseInit.initData();
 			
 			result = true;
 			

@@ -21,7 +21,7 @@ public class PAllUser extends JPanel
 		
 		JLabel lblTitle = new JLabel(title);
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitle.setFont(new Font("Arial Black", Font.PLAIN, 16));
+		lblTitle.setFont(new Font("Arial Black", Font.BOLD, 20));
 		lblTitle.setForeground(Color.WHITE);
 		add(lblTitle, BorderLayout.NORTH);
 		
