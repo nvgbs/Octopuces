@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import ihm.tableaubord.PCenterPanel;
 import ihm.tableaubord.PLeftPanel;
+import ihm.pageajoutcompte.FrameAjoutCompte;
+import ihm.pageajoutcompte.PAddAccount;
 import ihm.tableaubord.PAllAdvert;
 import ihm.tableaubord.PAllUser;
 import ihm.tableaubord.PBoardTable;
@@ -80,12 +82,28 @@ public class ActionMenuListener implements ActionListener
 				e1.printStackTrace();
 			}
 		}
+		else if (e.getSource() == leftPanel.getCreateUserBtn())
+		{
+			try
+			{
+				getActionCreateUserBtn (e);
+			}
+			catch (Exception e1)
+			{
+				e1.printStackTrace();
+			}
+		}
 	}
 	
 	
 	
 	
 	
+	
+
+
+
+
 	public void getActionDisconnect(ActionEvent e)
 	{
 		System.exit(1);
@@ -147,6 +165,11 @@ public class ActionMenuListener implements ActionListener
 		centerPanel.removeAll();
 		centerPanel.add(pAllUser, BorderLayout.CENTER);
 		centerPanel.updateUI();
+	}
+	
+	private void getActionCreateUserBtn(ActionEvent e)
+	{
+		new FrameAjoutCompte().setVisible(true);		
 	}
 	
 }//END

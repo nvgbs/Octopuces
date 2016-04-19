@@ -98,7 +98,7 @@ public class PLeftPanel extends JPanel
 		gbc_refuseAdvertBtn.gridy = 3;
 		this.add(refuseAdvertBtn, gbc_refuseAdvertBtn);
 		
-		
+		createUserBtn.addActionListener(menuListener);
 		createUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
 		createUserBtn.setIconTextGap(54);
 		createUserBtn.setForeground(new Color(70, 130, 180));

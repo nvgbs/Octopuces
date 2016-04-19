@@ -23,9 +23,8 @@ public class Main {
 			
 			//BaseInit.initData();
 			
-			new FrameAjoutCompte().setVisible(true);
-			
-			//new PMainPanel().setVisible(true);
+						
+			new PMainPanel().setVisible(true);
 			
 			result = true;
 			

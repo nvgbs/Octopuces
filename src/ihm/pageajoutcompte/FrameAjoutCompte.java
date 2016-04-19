@@ -15,12 +15,13 @@ public class FrameAjoutCompte extends JFrame {
 
 
 	public FrameAjoutCompte() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 639, 690);
-		setTitle("Ajouter un compte Adminitrateur - Modérateur");
+		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+		this.setBounds(100, 100, 639, 690);
+		this.setTitle("Ajouter un compte Adminitrateur - Modérateur");
+		this.setAlwaysOnTop(true);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		this.setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		PAddAccount panelAjoutCompte = new PAddAccount();
