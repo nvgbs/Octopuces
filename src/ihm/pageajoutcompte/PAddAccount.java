@@ -34,8 +34,7 @@ public class PAddAccount extends JPanel {
 	private JTextField textFieldFirstName = new JTextField();
 	private JPasswordField PasswordFieldPassword = new JPasswordField();
 	private JPasswordField PasswordFieldPasswordRepeat = new JPasswordField();
-	private JCheckBox chckbxAdmin = new JCheckBox("Droit Administrateur");
-	private JCheckBox chckbxModerator = new JCheckBox("Droit Modérateur");
+	private JCheckBox chckbxAdmin = new JCheckBox("Administrateur");
 	private JButton buttonAddUser = new JButton("");
 	JLabel lblPasswordFail = new JLabel("");
 		
@@ -139,7 +138,7 @@ public class PAddAccount extends JPanel {
 		lblDroitAcces.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDroitAcces.setForeground(new Color(255, 255, 255));
 		lblDroitAcces.setFont(new Font("SansSerif", Font.BOLD, 15));
-		lblDroitAcces.setBounds(62, 583, 217, 32);
+		lblDroitAcces.setBounds(60, 598, 159, 32);
 		add(lblDroitAcces);
 		
 		
@@ -148,19 +147,6 @@ public class PAddAccount extends JPanel {
 		chckbxAdmin.setFont(new Font("SansSerif", Font.BOLD, 14));
 		chckbxAdmin.setBounds(60, 637, 179, 23);
 		add(chckbxAdmin);
-		
-		
-		chckbxModerator.setBackground(new Color(57, 147, 184));
-		chckbxModerator.setForeground(new Color(255, 255, 255));
-		chckbxModerator.setFont(new Font("SansSerif", Font.BOLD, 14));
-		chckbxModerator.setBounds(258, 637, 172, 23);
-		add(chckbxModerator);
-		
-		JLabel lblCochezLaCase = new JLabel("Cochez la case correspondante");
-		lblCochezLaCase.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		lblCochezLaCase.setForeground(new Color(245, 245, 245));
-		lblCochezLaCase.setBounds(62, 609, 224, 16);
-		add(lblCochezLaCase);
 		
 		
 		buttonAddUser.addActionListener(userListener);
@@ -191,7 +177,7 @@ public class PAddAccount extends JPanel {
 		add(label_1);
 		
 		lblPasswordFail.setForeground(Color.RED);
-		lblPasswordFail.setBounds(288, 510, 184, 14);
+		lblPasswordFail.setBounds(288, 510, 262, 14);
 		add(lblPasswordFail);
 		
 		
@@ -247,12 +233,6 @@ public class PAddAccount extends JPanel {
 	public JCheckBox getChckbxAdmin() {
 		return chckbxAdmin;
 	}
-
-
-	public JCheckBox getChckbxModerator() {
-		return chckbxModerator;
-	}
-
 
 	public JButton getButtonAddUser() {
 		return buttonAddUser;

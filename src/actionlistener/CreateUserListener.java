@@ -47,7 +47,7 @@ public class CreateUserListener implements ActionListener
 			user.setName(pAddAccount.getTextFieldName().getText());
 			user.setFirstName(pAddAccount.getTextFieldFirstName().getText());
 			user.setLogin(pAddAccount.getTextFieldLogin().getText());
-			user.setRole(pAddAccount.getChckbxAdmin().gets);
+			
 		}
 		return UserRequest.addUser(user);
 			}
