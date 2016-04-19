@@ -11,6 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import javax.swing.border.MatteBorder;
+
+import actionlistener.ActionMenuListener;
+import actionlistener.CreateUserListener;
+
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
@@ -25,18 +29,24 @@ public class PAddAccount extends JPanel {
 
 	private JLabel lblCivility = new JLabel("Civilité");
 	private String[] civilite = { "Madame", "Monsieur"};
-	private JComboBox comboBox = new JComboBox(civilite);
+	private JComboBox comboBoxCivility = new JComboBox(civilite);
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldFirstName = new JTextField();
 	private JPasswordField PasswordFieldPassword = new JPasswordField();
-	private JPasswordField PasswordFieldPassword2 = new JPasswordField();
+	private JPasswordField PasswordFieldPasswordRepeat = new JPasswordField();
 	private JCheckBox chckbxAdmin = new JCheckBox("Droit Administrateur");
 	private JCheckBox chckbxModerator = new JCheckBox("Droit Modérateur");
 	private JButton buttonAddUser = new JButton("");
-	
-	
+	JLabel lblPasswordFail = new JLabel("");
+		
+
 	@SuppressWarnings("rawtypes")
-	public PAddAccount() {
+	public PAddAccount() 	
+	{
+		
+		CreateUserListener userListener = new CreateUserListener(this);
+		
+		
 		setBackground(new Color(57, 147, 184));
 		setLayout(null);
 		
@@ -57,11 +67,9 @@ public class PAddAccount extends JPanel {
 		
 		
 		
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Madame", "Monsieur"}));
-		//comboBox.setSelectedIndex(3);
-		comboBox.setEditable(false);
-		comboBox.setBounds(60, 201, 206, 26);
-		add(comboBox);
+		comboBoxCivility.setEditable(false);
+		comboBoxCivility.setBounds(60, 201, 206, 26);
+		add(comboBoxCivility);
 		
 		JLabel lblName = new JLabel("Nom");
 		lblName.setHorizontalAlignment(SwingConstants.LEFT);
@@ -109,21 +117,23 @@ public class PAddAccount extends JPanel {
 		add(PasswordFieldPassword);
 		PasswordFieldPassword.setColumns(10);
 		
-		JLabel lblPassword2 = new JLabel("Confirmer mot de passe");
-		lblPassword2.setHorizontalAlignment(SwingConstants.LEFT);
-		lblPassword2.setForeground(new Color(255, 255, 255));
-		lblPassword2.setFont(new Font("SansSerif", Font.BOLD, 15));
-		lblPassword2.setBounds(60, 502, 192, 26);
-		add(lblPassword2);
+		JLabel lblPasswordRepeat = new JLabel("Confirmer mot de passe");
+		lblPasswordRepeat.setHorizontalAlignment(SwingConstants.LEFT);
+		lblPasswordRepeat.setForeground(new Color(255, 255, 255));
+		lblPasswordRepeat.setFont(new Font("SansSerif", Font.BOLD, 15));
+		lblPasswordRepeat.setBounds(60, 502, 192, 26);
+		add(lblPasswordRepeat);
 		
 		
 		
-		PasswordFieldPassword2.setBackground(new Color(255, 255, 255));
-		PasswordFieldPassword2.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
-		PasswordFieldPassword2.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
-		PasswordFieldPassword2.setBounds(60, 539, 206, 23);
-		add(PasswordFieldPassword2);
-		PasswordFieldPassword2.setColumns(10);
+		PasswordFieldPasswordRepeat.setBackground(new Color(255, 255, 255));
+		PasswordFieldPasswordRepeat.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
+		PasswordFieldPasswordRepeat.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
+		PasswordFieldPasswordRepeat.setBounds(60, 539, 206, 23);
+		add(PasswordFieldPasswordRepeat);
+		PasswordFieldPasswordRepeat.setColumns(10);
+		
+		
 		
 		JLabel lblDroitAcces = new JLabel("Ajouter droit d'accès");
 		lblDroitAcces.setHorizontalAlignment(SwingConstants.LEFT);
@@ -153,6 +163,7 @@ public class PAddAccount extends JPanel {
 		add(lblCochezLaCase);
 		
 		
+		buttonAddUser.addActionListener(userListener);
 		buttonAddUser.setIcon(new ImageIcon(PAddAccount.class.getResource("/img/Icone_plus_100_68.png")));
 		buttonAddUser.setBounds(447, 564, 45, 97);
 		buttonAddUser.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
@@ -179,6 +190,10 @@ public class PAddAccount extends JPanel {
 		label_1.setBounds(41, 100, 490, 64);
 		add(label_1);
 		
+		lblPasswordFail.setForeground(Color.RED);
+		lblPasswordFail.setBounds(288, 510, 184, 14);
+		add(lblPasswordFail);
+		
 		
 		
 		
@@ -204,8 +219,8 @@ public class PAddAccount extends JPanel {
 	}
 
 
-	public JComboBox getComboBox() {
-		return comboBox;
+	public JComboBox getComboBoxCivility() {
+		return comboBoxCivility;
 	}
 
 
@@ -224,8 +239,8 @@ public class PAddAccount extends JPanel {
 	}
 
 
-	public JPasswordField getPasswordFieldPassword2() {
-		return PasswordFieldPassword2;
+	public JPasswordField getPasswordFieldPasswordRepeat() {
+		return PasswordFieldPasswordRepeat;
 	}
 
 
@@ -243,6 +258,8 @@ public class PAddAccount extends JPanel {
 		return buttonAddUser;
 	}
 	
-	
+	public JLabel getLblPasswordFail() {
+		return lblPasswordFail;
+	}
 	
 }
