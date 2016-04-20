@@ -12,7 +12,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
 
-import actionlistener.UserListener;
+import actionlistener.DeleteUserListener;
 
 public class PUser extends JPanel
 {
@@ -21,11 +21,14 @@ public class PUser extends JPanel
 	
 	private JButton buttonUpdate = new JButton("Modifier");
 	JButton buttonDelete = new JButton("Supprimer");
+	User userClone;
+	
 	
 	public PUser(User user)
 	{
-		UserListener userListener = new UserListener(this);
+		DeleteUserListener deleteUserListener = new DeleteUserListener(this);
 		
+		userClone = user;
 		setBackground(Color.WHITE);
 		
 		JLabel lblUser = new JLabel("Utilisateur :");
@@ -64,13 +67,13 @@ public class PUser extends JPanel
 		buttonUpdate.setFont(new Font("Helvetica", Font.BOLD, 12));
 		buttonUpdate.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
 		buttonUpdate.setBackground(new Color(56, 146, 184));
-		buttonUpdate.addActionListener(userListener);
+		buttonUpdate.addActionListener(deleteUserListener);
 		
 		buttonDelete.setForeground(Color.WHITE);
 		buttonDelete.setFont(new Font("Helvetica", Font.BOLD, 12));
 		buttonDelete.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
 		buttonDelete.setBackground(new Color(56, 146, 184));
-		buttonDelete.addActionListener(userListener);
+		buttonDelete.addActionListener(deleteUserListener);
 		
 		JLabel lblMailContent = new JLabel(user.getContact().getEmail());
 		
@@ -168,5 +171,10 @@ public class PUser extends JPanel
 	public JButton getButtonDelete()
 	{
 		return buttonDelete;
+	}
+	
+	public User getUser()
+	{
+		return userClone;
 	}
 }

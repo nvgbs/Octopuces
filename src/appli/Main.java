@@ -25,12 +25,12 @@ public class Main {
 			// configure hibernate
 			new Configuration().configure().buildSessionFactory();
 			
-			//BaseInit.initData();
+			BaseInit.initData();
 			
 			result = true;
 			
 					
-			//new PMainPanel().setVisible(true);		
+			new PMainPanel().setVisible(true);		
 			//DaoFactory.getDaoUser().readByRole(Role.NUM_ROLE_ADMINISTRATEUR);
 		}
 		catch (Exception e)
