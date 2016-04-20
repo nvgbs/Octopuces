@@ -12,13 +12,20 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
 
+import actionlistener.UserListener;
+
 public class PUser extends JPanel
 {
 
 	private static final long serialVersionUID = 1L;
 	
+	private JButton buttonUpdate = new JButton("Modifier");
+	JButton buttonDelete = new JButton("Supprimer");
+	
 	public PUser(User user)
 	{
+		UserListener userListener = new UserListener(this);
+		
 		setBackground(Color.WHITE);
 		
 		JLabel lblUser = new JLabel("Utilisateur :");
@@ -53,17 +60,17 @@ public class PUser extends JPanel
 		
 		JLabel lblRoleContent = new JLabel(user.getRole().getName());
 		
-		JButton button = new JButton("Modifier");
-		button.setForeground(Color.WHITE);
-		button.setFont(new Font("Helvetica", Font.BOLD, 12));
-		button.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
-		button.setBackground(new Color(56, 146, 184));
+		buttonUpdate.setForeground(Color.WHITE);
+		buttonUpdate.setFont(new Font("Helvetica", Font.BOLD, 12));
+		buttonUpdate.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
+		buttonUpdate.setBackground(new Color(56, 146, 184));
+		buttonUpdate.addActionListener(userListener);
 		
-		JButton button_1 = new JButton("Supprimer ");
-		button_1.setForeground(Color.WHITE);
-		button_1.setFont(new Font("Helvetica", Font.BOLD, 12));
-		button_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
-		button_1.setBackground(new Color(56, 146, 184));
+		buttonDelete.setForeground(Color.WHITE);
+		buttonDelete.setFont(new Font("Helvetica", Font.BOLD, 12));
+		buttonDelete.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
+		buttonDelete.setBackground(new Color(56, 146, 184));
+		buttonDelete.addActionListener(userListener);
 		
 		JLabel lblMailContent = new JLabel(user.getContact().getEmail());
 		
@@ -109,9 +116,9 @@ public class PUser extends JPanel
 										.addComponent(lblZipContent)))))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(72)
-							.addComponent(button, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
+							.addComponent(buttonUpdate, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(buttonDelete, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(112, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -145,11 +152,21 @@ public class PUser extends JPanel
 						.addComponent(lblCityContent))
 					.addGap(73)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(button, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
+						.addComponent(buttonUpdate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+						.addComponent(buttonDelete, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(35, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 		
+	}
+
+	public JButton getButtonUpdate()
+	{
+		return buttonUpdate;
+	}
+
+	public JButton getButtonDelete()
+	{
+		return buttonDelete;
 	}
 }
