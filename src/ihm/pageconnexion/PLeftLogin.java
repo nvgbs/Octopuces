@@ -20,14 +20,14 @@ import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.border.LineBorder;
 
-public class LeftPanel extends JPanel
+public class PLeftLogin extends JPanel
 {
 	private JTextField passwordField;
 
 	/**
 	 * Create the panel.
 	 */
-	public LeftPanel()
+	public PLeftLogin()
 	{
 		setBackground(new Color(243, 243, 244));
 		setLayout(null);

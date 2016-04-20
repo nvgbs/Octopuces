@@ -2,11 +2,15 @@ package appli;
 
 
 
+import java.nio.channels.ReadableByteChannel;
+
 import org.hibernate.cfg.Configuration;
 
 import base.BaseInit;
+import base.dao.DaoFactory;
 import ihm.pageajoutcompte.FrameAjoutCompte;
 import ihm.tableaubord.PMainPanel;
+import model.user.Role;
 
 
 public class Main {
@@ -23,12 +27,11 @@ public class Main {
 			
 			//BaseInit.initData();
 			
-						
-			new PMainPanel().setVisible(true);
-			
 			result = true;
 			
-			
+					
+			//new PMainPanel().setVisible(true);		
+			//DaoFactory.getDaoUser().readByRole(Role.NUM_ROLE_ADMINISTRATEUR);
 		}
 		catch (Exception e)
 		{
@@ -40,7 +43,10 @@ public class Main {
 		{
 			System.out.println(String.valueOf(result));
 		}
-
+		
+		
+		
+		
 	}
 
 }//END

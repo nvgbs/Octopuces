@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import ihm.pageconnexion.LeftPanel;
+import ihm.pageconnexion.PLeftLogin;
 
 public class FrameAjoutCompte extends JFrame {
 

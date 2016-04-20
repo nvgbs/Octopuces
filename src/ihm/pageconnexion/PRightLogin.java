@@ -10,12 +10,25 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class RightPanel extends JPanel {
+public class PRightLogin extends JPanel
+{
+	
+		
+	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Create the panel.
-	 */
-	public RightPanel()
+	
+	
+	
+	private JTextField textFieldPassword;
+	
+	private JTextField textFieldEmail;
+
+	
+	private JButton btnLogin = new JButton("Accéder à votre espace");
+	
+	
+	
+	public PRightLogin()
 	{
 		setBackground(new Color(255, 255, 255));
 		setLayout(null);
@@ -41,13 +54,7 @@ public class RightPanel extends JPanel {
 		lblEmail.setBounds(28, 85, 61, 16);
 		add(lblEmail);
 		
-		JTextField textField = new JTextField();
-		textField.setBackground(new Color(255, 255, 255));
-		textField.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
-		textField.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
-		textField.setBounds(28, 104, 238, 26);
-		add(textField);
-		textField.setColumns(10);
+		
 		
 		JLabel lblMotPasse = new JLabel("Mot de passe");
 		lblMotPasse.setHorizontalAlignment(SwingConstants.LEFT);
@@ -56,20 +63,20 @@ public class RightPanel extends JPanel {
 		lblMotPasse.setBounds(27, 154, 125, 16);
 		add(lblMotPasse);
 		
-		textField = new JTextField();
-		textField.setBackground(new Color(255, 255, 255));
-		textField.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
-		textField.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
-		textField.setBounds(28, 173, 238, 26);
-		add(textField);
-		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Accéder à votre espace");
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(56, 146, 184));
-		btnNewButton.setFont(new Font("Helvetica", Font.BOLD, 12));
-		btnNewButton.setBounds(27, 228, 239, 28);
-		add(btnNewButton);
+		textFieldPassword.setBackground(new Color(255, 255, 255));
+		textFieldPassword.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
+		textFieldPassword.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
+		textFieldPassword.setBounds(28, 173, 238, 26);
+		add(textFieldPassword);
+		textFieldPassword.setColumns(10);
+		
+		
+		btnLogin.setForeground(new Color(255, 255, 255));
+		btnLogin.setBackground(new Color(56, 146, 184));
+		btnLogin.setFont(new Font("Helvetica", Font.BOLD, 12));
+		btnLogin.setBounds(27, 228, 239, 28);
+		add(btnLogin);
 		
 		JLabel lblUnProblmeTechnique = new JLabel("Mot de passe oublié ?");
 		lblUnProblmeTechnique.setHorizontalAlignment(SwingConstants.CENTER);
@@ -85,7 +92,40 @@ public class RightPanel extends JPanel {
 		lblSignalerUnProblme.setBounds(10, 319, 277, 16);
 		add(lblSignalerUnProblme);
 		
-		
 
 	}
+
+
+
+
+
+
+	public JTextField getTextFieldPassword() {
+		return textFieldPassword;
+	}
+
+
+
+
+
+
+	public JTextField getTextFieldEmail() {
+		return textFieldEmail;
+	}
+
+
+
+
+
+
+	public JButton getBtnLogin() {
+		return btnLogin;
+	}
+	
+	
+	
+	
+	
+	
+	
 }
