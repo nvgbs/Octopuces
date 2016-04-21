@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import ihm.pageajoutcompte.PAddAccount;
 import metier.user.UserRequest;
-
+import model.user.Role;
 import model.user.User;
 
 public class CreateUserListener implements ActionListener
@@ -43,6 +43,7 @@ public class CreateUserListener implements ActionListener
 		
 		
 		
+		
 		String civility = pAddAccount.getComboBoxCivility().getSelectedItem().toString();
 			
 			if (pAddAccount.getTextFieldName().getText().length() > 0)
@@ -62,12 +63,33 @@ public class CreateUserListener implements ActionListener
 							
 							if (new String (pAddAccount.getPasswordFieldPassword().getPassword()).equals(new String (pAddAccount.getPasswordFieldPasswordRepeat().getPassword())))
 							{
-								password = new String (pAddAccount.getPasswordFieldPassword().getPassword());								
+								if (pAddAccount.getChckbxAdmin().isSelected())
+								{
+									
+									Role admin = new Role (Role.NUM_ROLE_ADMINISTRATEUR, "Admin");
+									
+									password = new String (pAddAccount.getPasswordFieldPassword().getPassword());								
+									
+									User user = new User(civility, firstName, name, login , password, admin);								
+									
+									UserRequest.addUser(user);
+									
+									pAddAccount.removeAll();
+								}
+								else
+								{
+									Role moderator = new Role (Role.NUM_ROLE_MODERATEUR, "Moderateur");
+									
+									password = new String (pAddAccount.getPasswordFieldPassword().getPassword());								
+									
+									User user = new User(civility, firstName, name, login , password , moderator);								
+									
+									UserRequest.addUser(user);
+									
+									pAddAccount.removeAll();
+								}
 								
-								User user = new User(civility, firstName, name, login , password);								
 								
-								UserRequest.addUser(user);
-								pAddAccount.removeAll();
 							}
 							else
 							{
@@ -113,18 +135,7 @@ public class CreateUserListener implements ActionListener
 		
 	}
 	
-	/*if (pAddAccount.getPasswordFieldPassword() != pAddAccount.getPasswordFieldPasswordRepeat())
-	{
-		pAddAccount.getLblPasswordFail().setText("Vos mots de passe ne correspondent pas");
-	} else
-	{
-		user.setPassword(pAddAccount.getPasswordFieldPassword().getSelectedText());
-		user.setCivility(pAddAccount.getComboBoxCivility().getSelectedItem().toString());
-		user.setName(pAddAccount.getTextFieldName().getText());
-		user.setFirstName(pAddAccount.getTextFieldFirstName().getText());
-		user.setLogin(pAddAccount.getTextFieldLogin().getText());
-		
-	}*/
+	
 	
 	
 }
