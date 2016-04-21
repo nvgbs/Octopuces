@@ -71,6 +71,9 @@ public class ActionListenerLogin implements ActionListener, MouseListener
 		ArrayList <User >listUser = (ArrayList<User>) UserRequest.getAllUser();
 		String login = frameLogin.getTextFieldLogin().getText();
 		String password =  new String (frameLogin.getTextFieldPassword().getPassword());
+		Boolean admin = false;
+		
+		
 		
 		for (User user : listUser) 
 		{
@@ -94,14 +97,17 @@ public class ActionListenerLogin implements ActionListener, MouseListener
 			
 			
 			
+			
+			
 			if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_USER))
 			{
 				frameLogin.getLblLoginFail().setText("Accés refusé, vous n'avez pas les droits requis !");
 			}
 			else if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() != Role.NUM_ROLE_USER))
 			{
-				new PMainPanel().setVisible(true);
 				frameLogin.dispose();
+				new PMainPanel().setVisible(true);
+				
 			}
 			
 			
