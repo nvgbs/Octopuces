@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	
+	<session-factory>
+	
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQL5InnoDBDialect
+		</property>
+		
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url">
+			jdbc:mysql://127.0.0.1:3306/octopuces
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		
+		<property name="hibernate.connection.password">
+		</property>
+
+		<property name="show_sql">true</property>
+		
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+
+		<!-- List of XML mapping files -->
+		<mapping class = "model.user.User"/>
+		<mapping class="model.user.Contact"/>
+		<mapping class="model.user.Region"/>
+		<mapping class = "model.user.Role"/>
+		<mapping class = "model.advert.Advert"/>
+		<mapping class = "model.advert.Category"/>
+		<mapping class = "model.advert.Picture"/>
+		<mapping class = "model.advert.SubCategory"/>
+		<mapping class = "model.basket.Basket"/>
+		<mapping class = "model.basket.AdvertToBasket"/>
+		
+	</session-factory>
+	
+</hibernate-configuration>
