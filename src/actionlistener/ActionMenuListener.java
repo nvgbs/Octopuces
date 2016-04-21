@@ -138,7 +138,7 @@ public class ActionMenuListener implements ActionListener
 	
 	public void getActionRefuseAdvertBtn (ActionEvent e) throws Exception
 	{
-		PAllAdvert pAllAdvert2 = new PAllAdvert(PCenterPanel.TITLE_UNVALIDATE, Advert.UNVALIDATE_STATE);
+		PAllAdvert pAllAdvert2 = new PAllAdvert(PCenterPanel.TITLE_DESACTIVED, Advert.UNVALIDATE_STATE);
 		
 		centerPanel.removeAll();
 		centerPanel.add(pAllAdvert2, BorderLayout.CENTER);

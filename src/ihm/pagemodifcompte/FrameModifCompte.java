@@ -58,7 +58,7 @@ public class FrameModifCompte extends JFrame {
 		JPanel pUpdateAccount = (JPanel)this.getContentPane();
 		pUpdateAccount.setBorder(new EmptyBorder(5, 5, 5, 5));
 		pUpdateAccount.setLayout(new BorderLayout(0, 0));
-		pUpdateAccount.setBackground(new Color(57, 147, 184));
+		pUpdateAccount.setBackground(new Color(70, 130, 180));
 		pUpdateAccount.setLayout(null);
 		
 		JLabel lblCrationCompteAdministrateur = new JLabel("Modification de Compte");
@@ -155,7 +155,7 @@ public class FrameModifCompte extends JFrame {
 		pUpdateAccount.add(lblDroitAcces);
 		
 		
-		chckbxAdmin.setBackground(new Color(57, 147, 184));
+		chckbxAdmin.setBackground(new Color(70, 130, 180));
 		chckbxAdmin.setForeground(new Color(255, 255, 255));
 		chckbxAdmin.setFont(new Font("SansSerif", Font.BOLD, 14));
 		chckbxAdmin.setBounds(60, 637, 179, 23);

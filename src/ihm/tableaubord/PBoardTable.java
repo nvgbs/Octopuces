@@ -46,7 +46,7 @@ public class PBoardTable extends JPanel
 		
 		
 		JLabel boardLabel = new JLabel("Tableau de bord");
-		boardLabel.setFont(new Font("Arial", Font.BOLD, 20));
+		boardLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
 		boardLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		boardLabel.setForeground(new Color(255, 255, 255));
 		add(boardLabel, BorderLayout.NORTH);

@@ -63,13 +63,13 @@ public class PUser extends JPanel
 		buttonUpdate.setForeground(Color.WHITE);
 		buttonUpdate.setFont(new Font("Helvetica", Font.BOLD, 12));
 		buttonUpdate.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
-		buttonUpdate.setBackground(new Color(56, 146, 184));
+		buttonUpdate.setBackground(new Color(70, 130, 180));
 		buttonUpdate.addActionListener(userListener);
 		
 		buttonDelete.setForeground(Color.WHITE);
 		buttonDelete.setFont(new Font("Helvetica", Font.BOLD, 12));
 		buttonDelete.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));
-		buttonDelete.setBackground(new Color(56, 146, 184));
+		buttonDelete.setBackground(new Color(70, 130, 180));
 		buttonDelete.addActionListener(userListener);
 		if (userClone.getContact() != null)
 		{

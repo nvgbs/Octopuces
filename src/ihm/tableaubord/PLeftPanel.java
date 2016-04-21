@@ -20,9 +20,9 @@ public class PLeftPanel extends JPanel
 	private JButton disconnectBtn = new JButton("Deconnexion");
 	private JButton listUserBtn = new JButton("Liste utilisateurs");
 	private JButton boardTableBtn = new JButton("Tableau de bord");
-	private JButton waitAdvertBtn = new JButton("Annonces à modérer");
-	private JButton checkAdvertBtn = new JButton("Annonces validées");
-	private JButton refuseAdvertBtn = new JButton("Annonces refusées");
+	private JButton waitAdvertBtn = new JButton("Annonces en attente");
+	private JButton checkAdvertBtn = new JButton("Annonces Validées");
+	private JButton refuseAdvertBtn = new JButton("Annonces Désactivées");
 	private JButton createUserBtn = new JButton("Créer utilisateur");
 	
 	
