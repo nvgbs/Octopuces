@@ -72,54 +72,60 @@ public class ActionListenerLogin implements ActionListener, MouseListener
 		String login = frameLogin.getTextFieldLogin().getText();
 		String password =  new String (frameLogin.getTextFieldPassword().getPassword());
 		Boolean admin = false;
+		Boolean launchTest = true;
+		Boolean booleanDeJu = false;
 		
 		
 		
-		for (User user : listUser) 
+		
+		if (login.length() == 0 && password.length() == 0)
 		{
-			if (login.length() == 0 && password.length() == 0)
-			{
-				frameLogin.getLblLoginFail().setText("Veuillez renseigner un Login !");
-				frameLogin.getLblPasswordFail().setText("Veuillez renseigner un mot de passe !");
-			}
-			else if (login.length() == 0 && password.length() > 0)
-			{
-				frameLogin.getLblLoginFail().setText("Veuillez renseigner un Login !");
-			}
-			else if (login.length() > 0 && password.length() == 0)
-			{
-				frameLogin.getLblPasswordFail().setText("Veuillez renseigner un mot de passe !");
-			}
-			else
-			{
-				frameLogin.getLblLoginFail().setText("Login ou mot de passe incorrect !");
-			}
-			
-			
-			
-			
-			
-			if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_USER))
-			{
-				frameLogin.getLblLoginFail().setText("Accés refusé, vous n'avez pas les droits requis !");
-			}
-			else if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_ADMINISTRATEUR))
-			{
-				admin = true;
-				frameLogin.dispose();
-				new MainFrame(admin).setVisible(true);
+			frameLogin.getLblLoginFail().setText("Veuillez renseigner un Login !");
+			frameLogin.getLblPasswordFail().setText("Veuillez renseigner un mot de passe !");
+			launchTest = false;
+		}
+		else if (login.length() == 0 && password.length() > 0)
+		{
+			frameLogin.getLblLoginFail().setText("Veuillez renseigner un Login !");
+			launchTest = false;
+		}
+		else if (login.length() > 0 && password.length() == 0)
+		{
+			frameLogin.getLblPasswordFail().setText("Veuillez renseigner un mot de passe !");
+			launchTest = false;
+		}
+		
+		
+		
+		if (launchTest == true)
+		{		
+			for (User user : listUser) 
+			{	
+				
+				
+				if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_USER))
+				{
+					frameLogin.getLblLoginFail().setText("Accés refusé, vous n'avez pas les droits requis !");
+					booleanDeJu = true;
+				}
+				else if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_ADMINISTRATEUR))
+				{
+					admin = true;
+					frameLogin.dispose();
+					new MainFrame(admin).setVisible(true);
+				
+				}
+				else if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_MODERATEUR))
+				{				
+					frameLogin.dispose();
+					new MainFrame(admin).setVisible(true);
+				}
+				else if (booleanDeJu == false)
+				{
+					frameLogin.getLblLoginFail().setText("Login ou mot de passe incorrect !");
+				}
 				
 			}
-			else if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_MODERATEUR))
-			{
-				
-				frameLogin.dispose();
-				new MainFrame(admin).setVisible(true);
-			}
-			
-			
-			
-			
 			
 		}
 		

@@ -1,6 +1,6 @@
 package ihm.pageajoutcompte;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Font;
 
@@ -50,9 +50,9 @@ public class FrameAjoutCompte extends JFrame
 
 		JPanel popUpDelete = (JPanel) this.getContentPane();
 		popUpDelete.setBorder(new EmptyBorder(5, 5, 5, 5));
-		popUpDelete.setLayout(new BorderLayout(0, 0));
 		popUpDelete.setBackground(new Color(70, 130, 180));		
 		popUpDelete.setLayout(null);
+		getContentPane().setLayout(null);
 		
 		JLabel lblCrationCompteAdministrateur = new JLabel("Création Compte Administrateur ou Modérateur");
 		lblCrationCompteAdministrateur.setHorizontalAlignment(SwingConstants.CENTER);
@@ -85,6 +85,7 @@ public class FrameAjoutCompte extends JFrame
 		textFieldName.setBounds(60, 275, 206, 23);
 		getContentPane().add(textFieldName);
 		textFieldName.setColumns(10);
+		textFieldName.addMouseListener(userListener);
 
 		JLabel lblFirstName = new JLabel("Prénom");
 		lblFirstName.setHorizontalAlignment(SwingConstants.LEFT);
@@ -99,6 +100,7 @@ public class FrameAjoutCompte extends JFrame
 		textFieldFirstName.setBounds(60, 336, 206, 23);
 		getContentPane().add(textFieldFirstName);
 		textFieldFirstName.setColumns(10);
+		textFieldFirstName.addMouseListener(userListener);
 
 		JLabel lblPassword = new JLabel("Mot de passe");
 		lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
@@ -113,6 +115,7 @@ public class FrameAjoutCompte extends JFrame
 		PasswordFieldPassword.setBounds(60, 468, 206, 23);
 		getContentPane().add(PasswordFieldPassword);
 		PasswordFieldPassword.setColumns(10);
+		PasswordFieldPassword.addMouseListener(userListener);
 
 		JLabel lblPasswordRepeat = new JLabel("Confirmer mot de passe");
 		lblPasswordRepeat.setHorizontalAlignment(SwingConstants.LEFT);
@@ -127,6 +130,7 @@ public class FrameAjoutCompte extends JFrame
 		PasswordFieldPasswordRepeat.setBounds(60, 539, 206, 23);
 		getContentPane().add(PasswordFieldPasswordRepeat);
 		PasswordFieldPasswordRepeat.setColumns(10);
+		PasswordFieldPasswordRepeat.addMouseListener(userListener);
 
 		JLabel lblDroitAcces = new JLabel("Ajouter droit d'accès");
 		lblDroitAcces.setHorizontalAlignment(SwingConstants.LEFT);
@@ -154,6 +158,7 @@ public class FrameAjoutCompte extends JFrame
 		textFieldLogin.setBackground(Color.WHITE);
 		textFieldLogin.setBounds(60, 397, 206, 23);
 		getContentPane().add(textFieldLogin);
+		textFieldLogin.addMouseListener(userListener);
 
 		JLabel labelLogin = new JLabel("Login");
 		labelLogin.setHorizontalAlignment(SwingConstants.LEFT);
@@ -167,21 +172,25 @@ public class FrameAjoutCompte extends JFrame
 		label_1.setIcon(new ImageIcon(FrameAjoutCompte.class.getResource("/img/Icone_Ajout_Compte_Ron_64.png")));
 		label_1.setBounds(41, 100, 490, 64);
 		getContentPane().add(label_1);
+		lblPasswordFail.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 10));
 
 		lblPasswordFail.setForeground(Color.RED);
-		lblPasswordFail.setBounds(288, 510, 262, 14);
+		lblPasswordFail.setBounds(243, 508, 288, 14);
 		getContentPane().add(lblPasswordFail);
+		lblNameFail.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 10));
 
 		lblNameFail.setForeground(Color.RED);
-		lblNameFail.setBounds(346, 280, 262, 14);
+		lblNameFail.setBounds(276, 284, 248, 14);
 		getContentPane().add(lblNameFail);
+		lblFirstNameFail.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 10));
 
 		lblFirstNameFail.setForeground(Color.RED);
-		lblFirstNameFail.setBounds(336, 341, 272, 14);
+		lblFirstNameFail.setBounds(278, 345, 253, 14);
 		getContentPane().add(lblFirstNameFail);
+		lblLoginFail.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 10));
 		lblLoginFail.setForeground(Color.RED);
 
-		lblLoginFail.setBounds(336, 402, 272, 14);
+		lblLoginFail.setBounds(278, 406, 246, 14);
 		getContentPane().add(lblLoginFail);
 	}
 
