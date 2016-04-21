@@ -65,8 +65,7 @@ public class User extends DataParent
 
 	/* Constructor */
 
-	public User(String civility, String name, String firstName, String login, String password, Contact contact,
-			Role role)
+	public User(String civility, String name, String firstName, String login, String password, Contact contact, Role role)
 	{
 		this.civility = civility;
 		this.name = name;
@@ -85,8 +84,8 @@ public class User extends DataParent
 		this.firstName = firstName;
 		this.login = login;
 		this.password = password;
-
 	}
+	
 	public User(String civility, String name, String firstName, String login, String password, Role role)
 	{
 		super();
@@ -96,7 +95,6 @@ public class User extends DataParent
 		this.login = login;
 		this.password = password;
 		this.role = role;
-
 	}
 	
 	
