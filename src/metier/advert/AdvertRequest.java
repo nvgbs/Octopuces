@@ -2,7 +2,7 @@ package metier.advert;
 
 import java.util.List;
 
-import base.dao.DaoAdvert;
+
 import base.dao.DaoFactory;
 
 import model.advert.Advert;

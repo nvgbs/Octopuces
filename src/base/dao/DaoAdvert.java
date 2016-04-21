@@ -23,6 +23,7 @@ public class DaoAdvert extends DaoParent
 		Criteria criteria = session.createCriteria(Advert.class);
 		criteria.add(Restrictions.eq("state", stateValue.intValue()));
 
+		@SuppressWarnings("unchecked")
 		ArrayList<Advert> listResult = (ArrayList<Advert>) criteria.list();
 
 		session.close();

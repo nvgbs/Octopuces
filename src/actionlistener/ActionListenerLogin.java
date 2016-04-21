@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import ihm.pageconnexion.FrameLogin;
-import ihm.tableaubord.PMainPanel;
+import ihm.tableaubord.MainFrame;
 import metier.user.UserRequest;
 import model.user.Role;
 import model.user.User;
@@ -107,14 +107,14 @@ public class ActionListenerLogin implements ActionListener, MouseListener
 			{
 				admin = true;
 				frameLogin.dispose();
-				new PMainPanel(admin).setVisible(true);
+				new MainFrame(admin).setVisible(true);
 				
 			}
 			else if (login.equals(user.getLogin()) && (password.equals(user.getPassword()) && user.getRole().getId() == Role.NUM_ROLE_MODERATEUR))
 			{
 				
 				frameLogin.dispose();
-				new PMainPanel(admin).setVisible(true);
+				new MainFrame(admin).setVisible(true);
 			}
 			
 			

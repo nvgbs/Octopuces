@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import ihm.pagemodifcompte.FrameModifCompte;
-import metier.user.UserRequest;
 import model.user.User;
 
 public class UpdateUserListener implements ActionListener

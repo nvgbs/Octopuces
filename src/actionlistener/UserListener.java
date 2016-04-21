@@ -2,12 +2,10 @@ package actionlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import base.dao.DaoFactory;
 import ihm.pagemodifcompte.FrameModifCompte;
 import ihm.pagesupprimercompte.FrameSupprimerCompte;
 import ihm.tableaubord.PUser;
-import model.user.User;
+
 
 public class UserListener implements ActionListener
 {

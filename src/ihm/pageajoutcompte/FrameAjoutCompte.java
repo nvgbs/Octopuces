@@ -22,8 +22,7 @@ import actionlistener.CreateUserListener;
 public class FrameAjoutCompte extends JFrame
 {
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	private static final long serialVersionUID = 1L;	
 	private JTextField textFieldLogin;
 	private JLabel lblCivility = new JLabel("Civilité");
 	private String[] civilite =	{ "Madame", "Monsieur" };

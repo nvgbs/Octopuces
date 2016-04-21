@@ -61,6 +61,7 @@ public class User extends DataParent
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "rol_id")
+	@NotNull
 	private Role role = null;
 
 	/* Constructor */

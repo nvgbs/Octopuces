@@ -4,13 +4,13 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class PMainPanel extends JFrame 
+public class MainFrame extends JFrame 
 {
 	
 	private static final long serialVersionUID = 1L;
 		
 	
-	public PMainPanel(Boolean admin) throws Exception
+	public MainFrame(Boolean admin) throws Exception
 	{		
 		this.setTitle("Octopuces v1.0");
 		this.setSize(1366,768);
