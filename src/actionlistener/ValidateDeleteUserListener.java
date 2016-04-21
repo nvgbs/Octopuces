@@ -31,7 +31,7 @@ public class ValidateDeleteUserListener implements ActionListener
 		}
 		else if (e.getSource() == frameSupprimerCompte.getBtnNo())
 		{
-			
+			frameSupprimerCompte.dispose();
 		}
 		
 	}

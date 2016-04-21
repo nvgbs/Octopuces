@@ -31,7 +31,7 @@ public class Main {
 			
 					
 			new PMainPanel().setVisible(true);		
-			//DaoFactory.getDaoUser().readByRole(Role.NUM_ROLE_ADMINISTRATEUR);
+			
 		}
 		catch (Exception e)
 		{

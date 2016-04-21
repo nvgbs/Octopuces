@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import ihm.tableaubord.PCenterPanel;
 import ihm.tableaubord.PLeftPanel;
 import ihm.pageajoutcompte.FrameAjoutCompte;
-import ihm.pageajoutcompte.PAddAccount;
 import ihm.tableaubord.PAllAdvert;
 import ihm.tableaubord.PAllUser;
 import ihm.tableaubord.PBoardTable;

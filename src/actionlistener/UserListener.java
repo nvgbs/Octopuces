@@ -4,16 +4,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import base.dao.DaoFactory;
+import ihm.pagemodifcompte.FrameModifCompte;
 import ihm.pagesupprimercompte.FrameSupprimerCompte;
 import ihm.tableaubord.PUser;
 import model.user.User;
 
-public class DeleteUserListener implements ActionListener
+public class UserListener implements ActionListener
 {
 
 	private PUser pUser;
 		
-	public DeleteUserListener(PUser pUser)
+	public UserListener(PUser pUser)
 	{
 		this.pUser = pUser;
 	}
@@ -40,7 +41,7 @@ public class DeleteUserListener implements ActionListener
 
 	private void getUpdateUser()
 	{
-		// TODO Auto-generated method stub
+		new FrameModifCompte(pUser.getUser()).setVisible(true);
 		
 	}
 

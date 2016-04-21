@@ -3,7 +3,7 @@ package actionlistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import ihm.pageajoutcompte.PAddAccount;
+import ihm.pageajoutcompte.FrameAjoutCompte;
 import metier.user.UserRequest;
 
 import model.user.User;
@@ -11,16 +11,16 @@ import model.user.User;
 public class CreateUserListener implements ActionListener
 {
 
-	private PAddAccount pAddAccount;
+	private FrameAjoutCompte frameAjoutCompte;
 
-	public CreateUserListener(PAddAccount pAddAccount)
+	public CreateUserListener(FrameAjoutCompte frameAjoutCompte)
 	{
-		this.pAddAccount = pAddAccount;
+		this.frameAjoutCompte = frameAjoutCompte;
 	}
 
 	public void actionPerformed(ActionEvent e)
 	{
-		if (e.getSource() == pAddAccount.getButtonAddUser())
+		if (e.getSource() == frameAjoutCompte.getButtonAddUser())
 		{
 			try
 			{
@@ -43,55 +43,55 @@ public class CreateUserListener implements ActionListener
 		
 		
 		
-		String civility = pAddAccount.getComboBoxCivility().getSelectedItem().toString();
+		String civility = frameAjoutCompte.getComboBoxCivility().getSelectedItem().toString();
 			
-			if (pAddAccount.getTextFieldName().getText().length() > 0)
+			if (frameAjoutCompte.getTextFieldName().getText().length() > 0)
 			{
-				name = pAddAccount.getTextFieldName().getText();
+				name = frameAjoutCompte.getTextFieldName().getText();
 				
-				if (pAddAccount.getTextFieldFirstName().getText().length() > 0)
+				if (frameAjoutCompte.getTextFieldFirstName().getText().length() > 0)
 				{
-					firstName = pAddAccount.getTextFieldName().getText();
+					firstName = frameAjoutCompte.getTextFieldName().getText();
 					
-					if (pAddAccount.getTextFieldLogin().getText().length() > 0)
+					if (frameAjoutCompte.getTextFieldLogin().getText().length() > 0)
 					{
-						login = pAddAccount.getTextFieldLogin().getText();
+						login = frameAjoutCompte.getTextFieldLogin().getText();
 						
-						if ((pAddAccount.getPasswordFieldPassword().getPassword().length > 0) && (pAddAccount.getPasswordFieldPasswordRepeat().getPassword().length > 0))					
+						if ((frameAjoutCompte.getPasswordFieldPassword().getPassword().length > 0) && (frameAjoutCompte.getPasswordFieldPasswordRepeat().getPassword().length > 0))					
 						{
 							
-							if (new String (pAddAccount.getPasswordFieldPassword().getPassword()).equals(new String (pAddAccount.getPasswordFieldPasswordRepeat().getPassword())))
+							if (new String (frameAjoutCompte.getPasswordFieldPassword().getPassword()).equals(new String (frameAjoutCompte.getPasswordFieldPasswordRepeat().getPassword())))
 							{
-								password = new String (pAddAccount.getPasswordFieldPassword().getPassword());								
+								password = new String (frameAjoutCompte.getPasswordFieldPassword().getPassword());								
 								
 								User user = new User(civility, firstName, name, login , password);								
 								
 								UserRequest.addUser(user);
-								pAddAccount.removeAll();
+								frameAjoutCompte.removeAll();
 							}
 							else
 							{
-								pAddAccount.getLblPasswordFail().setText("Vos mots de passe ne correspondent pas");
+								frameAjoutCompte.getLblPasswordFail().setText("Vos mots de passe ne correspondent pas");
 							}					
 						}
 						else
 						{
-							pAddAccount.getLblPasswordFail().setText("Un des champs n'est pas renseigné");
+							frameAjoutCompte.getLblPasswordFail().setText("Un des champs n'est pas renseigné");
 						}						
 					}
 					else
 					{
-						pAddAccount.getLblLoginFail().setText("Ce champ doit être renseigné");
+						frameAjoutCompte.getLblLoginFail().setText("Ce champ doit être renseigné");
 					}
 				}
 				else
 				{
-					pAddAccount.getLblFirstNameFail().setText("Ce champ doit être renseigné");
+					frameAjoutCompte.getLblFirstNameFail().setText("Ce champ doit être renseigné");
 				}
 			}
 			else
 			{
-				pAddAccount.getLblNameFail().setText("Ce champ doit être renseigné");
+				frameAjoutCompte.getLblNameFail().setText("Ce champ doit être renseigné");
 			}
 		
 		
@@ -113,16 +113,16 @@ public class CreateUserListener implements ActionListener
 		
 	}
 	
-	/*if (pAddAccount.getPasswordFieldPassword() != pAddAccount.getPasswordFieldPasswordRepeat())
+	/*if (frameAjoutCompte.getPasswordFieldPassword() != frameAjoutCompte.getPasswordFieldPasswordRepeat())
 	{
-		pAddAccount.getLblPasswordFail().setText("Vos mots de passe ne correspondent pas");
+		frameAjoutCompte.getLblPasswordFail().setText("Vos mots de passe ne correspondent pas");
 	} else
 	{
-		user.setPassword(pAddAccount.getPasswordFieldPassword().getSelectedText());
-		user.setCivility(pAddAccount.getComboBoxCivility().getSelectedItem().toString());
-		user.setName(pAddAccount.getTextFieldName().getText());
-		user.setFirstName(pAddAccount.getTextFieldFirstName().getText());
-		user.setLogin(pAddAccount.getTextFieldLogin().getText());
+		user.setPassword(frameAjoutCompte.getPasswordFieldPassword().getSelectedText());
+		user.setCivility(frameAjoutCompte.getComboBoxCivility().getSelectedItem().toString());
+		user.setName(frameAjoutCompte.getTextFieldName().getText());
+		user.setFirstName(frameAjoutCompte.getTextFieldFirstName().getText());
+		user.setLogin(frameAjoutCompte.getTextFieldLogin().getText());
 		
 	}*/
 	

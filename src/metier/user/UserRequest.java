@@ -12,7 +12,7 @@ public class UserRequest
 	
 	public static List<User> getAllUser() throws Exception
 	{
-		return (List<User>) DaoFactory.getDaoUser().readAll(User.class);			
+		return (List<User>) DaoFactory.getDaoUser().readAll(User.class);
 	}
 		
 	
@@ -23,7 +23,10 @@ public class UserRequest
 		return DaoFactory.getDaoUser().save(user);
 	}
 	
-	
+	public static User updateUser(User user) throws Exception
+	{
+		return DaoFactory.getDaoUser().update(user);
+	}
 	
 	
 	
