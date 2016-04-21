@@ -48,8 +48,7 @@ public class DeleteUserListener implements ActionListener
 	{
 		
 		new FrameSupprimerCompte(pUser.getUser()).setVisible(true);
-		//DaoFactory.getDaoUser().delete(pUser.getUser());
-		
+				
 	}
 	
 }

@@ -1,22 +1,27 @@
 package ihm.pageajoutcompte;
+
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
+
 import javax.swing.JPanel;
-import javax.swing.UIManager;
+
 import javax.swing.border.EmptyBorder;
 
-import ihm.pageconnexion.PLeftLogin;
 
-public class FrameAjoutCompte extends JFrame {
 
+public class FrameAjoutCompte extends JFrame
+{
+
+	
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
 
 	public FrameAjoutCompte() {
 		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 		this.setBounds(100, 100, 639, 690);
+		this.setLocationRelativeTo(null);
 		this.setTitle("Ajouter un compte Adminitrateur - Modérateur");
 		this.setAlwaysOnTop(true);
 		contentPane = new JPanel();
@@ -25,7 +30,10 @@ public class FrameAjoutCompte extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		PAddAccount panelAjoutCompte = new PAddAccount();
-		contentPane.add(panelAjoutCompte);
+		this.add(panelAjoutCompte);
+		
 	}
-
 }
+		
+
+	

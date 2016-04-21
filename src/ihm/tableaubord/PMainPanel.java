@@ -14,8 +14,7 @@ public class PMainPanel extends JFrame
 	{		
 		this.setTitle("Octopuces v1.0");
 		this.setSize(1366,768);
-		this.setLocation(150,150);
-		//this.setAlwaysOnTop(true);
+		this.setLocationRelativeTo(null);
 		this.setResizable(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
