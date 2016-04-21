@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 import base.BaseInit;
 import base.dao.DaoFactory;
 import ihm.pageajoutcompte.FrameAjoutCompte;
+import ihm.pageconnexion.FrameLogin;
 import ihm.tableaubord.PMainPanel;
 import model.user.Role;
 
@@ -29,9 +30,9 @@ public class Main {
 			
 			result = true;
 			
-					
-			new PMainPanel().setVisible(true);		
-			//DaoFactory.getDaoUser().readByRole(Role.NUM_ROLE_ADMINISTRATEUR);
+			new FrameLogin().setVisible(true);	
+				
+			
 		}
 		catch (Exception e)
 		{

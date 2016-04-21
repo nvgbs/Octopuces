@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import ihm.pageconnexion.PLeftLogin;
+import ihm.pageconnexion.FrameLogin;
 
 public class FrameModifCompte extends JFrame {
 

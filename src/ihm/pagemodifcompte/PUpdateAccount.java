@@ -49,7 +49,7 @@ public class PUpdateAccount extends JPanel {
 	public PUpdateAccount() 	
 	{
 		
-		DeleteUserListener userListener = new DeleteUserListener(this);
+		// DeleteUserListener userListener = new DeleteUserListener(this);
 		
 		
 		setBackground(new Color(57, 147, 184));
@@ -155,7 +155,7 @@ public class PUpdateAccount extends JPanel {
 		add(chckbxAdmin);
 		
 		
-		buttonAddUser.addActionListener(userListener);
+	//	buttonAddUser.addActionListener(userListener);
 		buttonAddUser.setIcon(new ImageIcon(PUpdateAccount.class.getResource("/img/Icone_plus_100_68.png")));
 		buttonAddUser.setBounds(447, 564, 45, 97);
 		buttonAddUser.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(255, 255, 255)));

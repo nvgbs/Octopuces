@@ -35,9 +35,9 @@ public class BaseInit {
 		Contact contact5 = new Contact ("34000", "Montpellier", "0485256369", "meynadierjulien@gmail.com", region);
 		
 		
-		User user1 = new User ("Monsieur", "Badr", "Normann", "Nono" , "1603", contact1, admin);
+		User user1 = new User ("Monsieur", "Badr", "Normann", "Nono" , "1603", contact1, user);
 		User user2 = new User ("Madame", "Rigault", "Isabelle", "Isa","0000", contact2, admin);
-		User user3 = new User ("Monsieur", "Genre", "Seb", "Seb", "1111", contact3, admin); 
+		User user3 = new User ("Monsieur", "Genre", "Seb", "Seb", "1111", contact3, moderator); 
 		User user4 = new User ("Madame", "Marty", "Jessyka", "Red Fish", "2222", contact4, admin);
 		User user5 = new User ("Monsieur", "Meynadier", "Julien", "Ju", "3333", contact5, admin);
 		
