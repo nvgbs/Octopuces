@@ -25,9 +25,10 @@ public class PLeftPanel extends JPanel
 	private JButton refuseAdvertBtn = new JButton("Annonces refusées");
 	private JButton createUserBtn = new JButton("Créer utilisateur");
 	
+	
 	private static final long serialVersionUID = 1L;
 
-	public PLeftPanel(PCenterPanel centerPanel)
+	public PLeftPanel(PCenterPanel centerPanel, Boolean admin)
 	{
 		ActionMenuListener menuListener = new ActionMenuListener(this, centerPanel);
 		
@@ -98,19 +99,26 @@ public class PLeftPanel extends JPanel
 		gbc_refuseAdvertBtn.gridy = 3;
 		this.add(refuseAdvertBtn, gbc_refuseAdvertBtn);
 		
-		createUserBtn.addActionListener(menuListener);
-		createUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
-		createUserBtn.setIconTextGap(54);
-		createUserBtn.setForeground(new Color(70, 130, 180));
-		createUserBtn.setBackground(new Color(255, 255, 255));
-		createUserBtn.setFont(new Font("SansSerif", Font.BOLD, 14));
-		createUserBtn.setBorder(new LineBorder(new Color(70, 130, 180), 2, true));
-		GridBagConstraints gbc_createUserBtn = new GridBagConstraints();
-		gbc_createUserBtn.fill = GridBagConstraints.BOTH;
-		gbc_createUserBtn.insets = new Insets(0, 0, 5, 0);
-		gbc_createUserBtn.gridx = 0;
-		gbc_createUserBtn.gridy = 4;
-		this.add(createUserBtn, gbc_createUserBtn);
+		if (admin == true)
+		{
+			createUserBtn.addActionListener(menuListener);
+			createUserBtn.setForeground(new Color(70, 130, 180));
+			createUserBtn.setBackground(new Color(255, 255, 255));
+			createUserBtn.setFont(new Font("SansSerif", Font.BOLD, 14));
+			createUserBtn.setBorder(new LineBorder(new Color(70, 130, 180), 2, true));
+			GridBagConstraints gbc_createUserBtn = new GridBagConstraints();
+			gbc_createUserBtn.fill = GridBagConstraints.BOTH;
+			gbc_createUserBtn.insets = new Insets(0, 0, 5, 0);
+			gbc_createUserBtn.gridx = 0;
+			gbc_createUserBtn.gridy = 5;
+			this.add(createUserBtn, gbc_createUserBtn);
+			createUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
+			createUserBtn.setIconTextGap(54);
+		}
+		
+		
+		
+		
 		
 		listUserBtn.addActionListener(menuListener);
 		listUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
@@ -123,8 +131,9 @@ public class PLeftPanel extends JPanel
 		gbc_listUserBtn.fill = GridBagConstraints.BOTH;
 		gbc_listUserBtn.insets = new Insets(0, 0, 5, 0);
 		gbc_listUserBtn.gridx = 0;
-		gbc_listUserBtn.gridy = 5;
+		gbc_listUserBtn.gridy = 4;
 		this.add(listUserBtn, gbc_listUserBtn);
+		
 		
 		disconnectBtn.addActionListener(menuListener);
 		disconnectBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_Deconnexion_Carre_38x38.png")));

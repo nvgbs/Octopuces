@@ -168,7 +168,7 @@ public class ActionMenuListener implements ActionListener
 	
 	private void getActionCreateUserBtn(ActionEvent e)
 	{
-		if 
+		
 		new FrameAjoutCompte().setVisible(true);	
 	}
 	

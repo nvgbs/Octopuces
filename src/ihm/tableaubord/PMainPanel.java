@@ -10,7 +10,7 @@ public class PMainPanel extends JFrame
 	private static final long serialVersionUID = 1L;
 		
 	
-	public PMainPanel() throws Exception
+	public PMainPanel(Boolean admin) throws Exception
 	{		
 		this.setTitle("Octopuces v1.0");
 		this.setSize(1366,768);
@@ -23,7 +23,7 @@ public class PMainPanel extends JFrame
 		
 		PCenterPanel centerPanel = new PCenterPanel();
 		
-		tableauBord.add(new PLeftPanel(centerPanel), BorderLayout.WEST);
+		tableauBord.add(new PLeftPanel(centerPanel, admin), BorderLayout.WEST);
 		tableauBord.add(new PNorthPanel(), BorderLayout.NORTH);
 		tableauBord.add(centerPanel, BorderLayout.CENTER);
 	}

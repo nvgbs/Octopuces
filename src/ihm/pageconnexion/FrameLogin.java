@@ -9,6 +9,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -168,6 +169,7 @@ public class FrameLogin extends JFrame
 		btnLogin.setFont(new Font("Helvetica Neue", Font.BOLD, 15));
 		btnLogin.setBounds(63, 377, 323, 38);
 		panel.add(btnLogin);
+		
 		
 		JLabel lblMotPasse1 = new JLabel("Mot de passe oublié ?");
 		lblMotPasse1.setHorizontalAlignment(SwingConstants.CENTER);
