@@ -19,6 +19,7 @@ public class PLeftPanel extends JPanel
 {
 	private JButton disconnectBtn = new JButton("Deconnexion");
 	private JButton listUserBtn = new JButton("Liste utilisateurs");
+	private JButton listUserBtnAdmin = new JButton("Liste utilisateurs");
 	private JButton boardTableBtn = new JButton("Tableau de bord");
 	private JButton waitAdvertBtn = new JButton("Annonces en attente");
 	private JButton checkAdvertBtn = new JButton("Annonces Validées");
@@ -114,25 +115,38 @@ public class PLeftPanel extends JPanel
 			this.add(createUserBtn, gbc_createUserBtn);
 			createUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
 			createUserBtn.setIconTextGap(54);
+		
+			listUserBtnAdmin.addActionListener(menuListener);
+			listUserBtnAdmin.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
+			listUserBtnAdmin.setIconTextGap(49);
+			listUserBtnAdmin.setForeground(new Color (70, 130, 180));
+			listUserBtnAdmin.setBackground(new Color(255, 255, 255));
+			listUserBtnAdmin.setFont(new Font ("Helvetica", Font.BOLD, 14));
+			listUserBtnAdmin.setBorder(new LineBorder (new Color (70, 130, 180), 2));
+			GridBagConstraints gbc_listUserBtn = new GridBagConstraints();
+			gbc_listUserBtn.fill = GridBagConstraints.BOTH;
+			gbc_listUserBtn.insets = new Insets(0, 0, 5, 0);
+			gbc_listUserBtn.gridx = 0;
+			gbc_listUserBtn.gridy = 4;
+			this.add(listUserBtnAdmin, gbc_listUserBtn);
+		}
+		else
+		{
+			listUserBtn.addActionListener(menuListener);
+			listUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
+			listUserBtn.setIconTextGap(49);
+			listUserBtn.setForeground(new Color (70, 130, 180));
+			listUserBtn.setBackground(new Color(255, 255, 255));
+			listUserBtn.setFont(new Font ("Helvetica", Font.BOLD, 14));
+			listUserBtn.setBorder(new LineBorder (new Color (70, 130, 180), 2));
+			GridBagConstraints gbc_listUserBtn = new GridBagConstraints();
+			gbc_listUserBtn.fill = GridBagConstraints.BOTH;
+			gbc_listUserBtn.insets = new Insets(0, 0, 5, 0);
+			gbc_listUserBtn.gridx = 0;
+			gbc_listUserBtn.gridy = 4;
+			this.add(listUserBtn, gbc_listUserBtn);
 		}
 		
-		
-		
-		
-		
-		listUserBtn.addActionListener(menuListener);
-		listUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
-		listUserBtn.setIconTextGap(49);
-		listUserBtn.setForeground(new Color (70, 130, 180));
-		listUserBtn.setBackground(new Color(255, 255, 255));
-		listUserBtn.setFont(new Font ("Helvetica", Font.BOLD, 14));
-		listUserBtn.setBorder(new LineBorder (new Color (70, 130, 180), 2));
-		GridBagConstraints gbc_listUserBtn = new GridBagConstraints();
-		gbc_listUserBtn.fill = GridBagConstraints.BOTH;
-		gbc_listUserBtn.insets = new Insets(0, 0, 5, 0);
-		gbc_listUserBtn.gridx = 0;
-		gbc_listUserBtn.gridy = 4;
-		this.add(listUserBtn, gbc_listUserBtn);
 		
 		
 		disconnectBtn.addActionListener(menuListener);
@@ -148,9 +162,7 @@ public class PLeftPanel extends JPanel
 		gbc_disconnectBtn.gridy = 8;
 		this.add(disconnectBtn, gbc_disconnectBtn);
 	}
-	
-	
-	
+
 	
 	public JButton getDisconnectBtn()
 	{
@@ -185,6 +197,11 @@ public class PLeftPanel extends JPanel
 	public JButton getCreateUserBtn() 
 	{
 		return createUserBtn;
+	}
+	
+	public JButton getListUserBtnAdmin()
+	{
+		return listUserBtnAdmin;
 	}
 
 	

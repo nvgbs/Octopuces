@@ -150,7 +150,7 @@ public class CreateUserListener implements ActionListener, MouseListener
 		else if (allCheck == true)
 		{
 			name = frameAjoutCompte.getTextFieldName().getText();
-			firstName = frameAjoutCompte.getTextFieldName().getText();
+			firstName = frameAjoutCompte.getTextFieldFirstName().getText();
 			login = frameAjoutCompte.getTextFieldLogin().getText();
 			password = new String (frameAjoutCompte.getPasswordFieldPassword().getPassword());
 			

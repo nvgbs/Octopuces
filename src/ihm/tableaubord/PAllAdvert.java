@@ -38,6 +38,7 @@ public class PAllAdvert extends JPanel {
 		add(gridLayoutForAdvert, BorderLayout.CENTER);
 		
 		JScrollPane scroll = new JScrollPane(gridLayoutForAdvert);
+		scroll.getVerticalScrollBar().setUnitIncrement(10);
 		this.add(scroll);
 		// repaint();
 		

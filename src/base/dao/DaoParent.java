@@ -50,14 +50,14 @@ public abstract class DaoParent
 
 	
 
-	public <E extends DataParent> E readById(E objetBase, Integer id)
+	public <E extends DataParent> E readById(Class<E> objetBaseClass, Integer id)
 			throws Exception
 	{
 
 		Session session = BaseSession.getNewSession();
 
-		Criteria criteria = session.createCriteria(objetBase.getClass());
-		criteria.add(Restrictions.eq(objetBase.NOM_ID, id.intValue()));
+		Criteria criteria = session.createCriteria(objetBaseClass);
+		criteria.add(Restrictions.eq("id", id.intValue()));
 
 		@SuppressWarnings("unchecked")
 		E result = (E) criteria.uniqueResult();

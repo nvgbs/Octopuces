@@ -49,12 +49,7 @@ public class PUser extends JPanel
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		JLabel lblLoginContent = new JLabel(userClone.getLogin());
-		
-		JLabel lblPassword = new JLabel("Mot de passe :");
-		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 13));
-		
-		JLabel lblPasswordContent = new JLabel(userClone.getPassword());
-				
+								
 		JLabel lblRole = new JLabel("Role :");
 		lblRole.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
@@ -110,12 +105,10 @@ public class PUser extends JPanel
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblPassword)
 								.addComponent(lblRole))
 							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblRoleContent)
-								.addComponent(lblPasswordContent)))
+								.addComponent(lblRoleContent)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblLogin)
@@ -159,8 +152,6 @@ public class PUser extends JPanel
 						.addComponent(lblMailContent))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblPassword)
-						.addComponent(lblPasswordContent)
 						.addComponent(lblPhone)
 						.addComponent(lblPhoneContent))
 					.addPreferredGap(ComponentPlacement.RELATED)

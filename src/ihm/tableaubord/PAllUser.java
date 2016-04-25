@@ -16,6 +16,7 @@ public class PAllUser extends JPanel
 	
 	public PAllUser(String title) throws Exception
 	{
+		
 		this.setBackground(new Color(70, 130, 180));
 		setLayout(new BorderLayout(0, 0));
 		
@@ -32,6 +33,7 @@ public class PAllUser extends JPanel
 		add(gridLayoutForUser, BorderLayout.CENTER);
 		
 		JScrollPane scroll = new JScrollPane(gridLayoutForUser);
+		scroll.getVerticalScrollBar().setUnitIncrement(10);
 		this.add(scroll);
 	}
 

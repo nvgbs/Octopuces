@@ -10,6 +10,8 @@ import java.awt.BorderLayout;
 import java.util.List;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Cursor;
 
 public class PBoardTable extends JPanel 
 {
@@ -22,9 +24,13 @@ public class PBoardTable extends JPanel
 		setLayout(new BorderLayout(0, 0));
 		
 		JLabel nbAdvertLabel = new JLabel("New label");
+		nbAdvertLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+		nbAdvertLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		nbAdvertLabel.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		nbAdvertLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
+		nbAdvertLabel.setIcon(new ImageIcon(PBoardTable.class.getResource("/img/Tab_Bord_0.png")));
 		nbAdvertLabel.setFont(new Font("Arial", Font.BOLD, 16));
 		nbAdvertLabel.setForeground(new Color(255, 255, 255));
-		nbAdvertLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		add(nbAdvertLabel, BorderLayout.CENTER);
 		
 		List<Advert> listAdvert = AdvertRequest.getListAdvert(Advert.WAIT_STATE);

@@ -23,10 +23,10 @@ public class UserRequest
 		return DaoFactory.getDaoUser().save(user);
 	}
 	
-	/*public static User updateUser(User user) throws Exception
+	public static void updateUser(User user) throws Exception
 	{
-		return DaoFactory.getDaoUser().update(user);
-	}*/
+		DaoFactory.getDaoUser().update(user);
+	}
 	
 	
 	
