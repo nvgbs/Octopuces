@@ -114,24 +114,10 @@ public class PLeftPanel extends JPanel
 			gbc_createUserBtn.gridy = 5;
 			this.add(createUserBtn, gbc_createUserBtn);
 			createUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
-			createUserBtn.setIconTextGap(54);
-		
-			listUserBtnAdmin.addActionListener(menuListener);
-			listUserBtnAdmin.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
-			listUserBtnAdmin.setIconTextGap(49);
-			listUserBtnAdmin.setForeground(new Color (70, 130, 180));
-			listUserBtnAdmin.setBackground(new Color(255, 255, 255));
-			listUserBtnAdmin.setFont(new Font ("Helvetica", Font.BOLD, 14));
-			listUserBtnAdmin.setBorder(new LineBorder (new Color (70, 130, 180), 2));
-			GridBagConstraints gbc_listUserBtn = new GridBagConstraints();
-			gbc_listUserBtn.fill = GridBagConstraints.BOTH;
-			gbc_listUserBtn.insets = new Insets(0, 0, 5, 0);
-			gbc_listUserBtn.gridx = 0;
-			gbc_listUserBtn.gridy = 4;
-			this.add(listUserBtnAdmin, gbc_listUserBtn);
+			createUserBtn.setIconTextGap(54);				
 		}
-		else
-		{
+		
+		
 			listUserBtn.addActionListener(menuListener);
 			listUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
 			listUserBtn.setIconTextGap(49);
@@ -145,7 +131,7 @@ public class PLeftPanel extends JPanel
 			gbc_listUserBtn.gridx = 0;
 			gbc_listUserBtn.gridy = 4;
 			this.add(listUserBtn, gbc_listUserBtn);
-		}
+		
 		
 		
 		

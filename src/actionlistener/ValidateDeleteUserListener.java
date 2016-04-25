@@ -23,6 +23,8 @@ public class ValidateDeleteUserListener implements ActionListener
 			try
 			{
 				DaoFactory.getDaoUser().delete(frameSupprimerCompte.getUser());
+				DaoFactory.getDaoContact().delete(frameSupprimerCompte.getUser().getContact());
+				
 			} catch (Exception e1)
 			{
 				// TODO Auto-generated catch block

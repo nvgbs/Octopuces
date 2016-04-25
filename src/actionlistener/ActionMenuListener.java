@@ -81,17 +81,6 @@ public class ActionMenuListener implements ActionListener
 				e1.printStackTrace();
 			}
 		}
-		else if (e.getSource() == leftPanel.getListUserBtnAdmin())
-		{
-			try 
-			{
-				getActionListUserBtnAdmin (e);
-			} 
-			catch (Exception e1) 
-			{				
-				e1.printStackTrace();
-			}
-		}
 		else if (e.getSource() == leftPanel.getCreateUserBtn())
 		{
 			try
@@ -171,18 +160,14 @@ public class ActionMenuListener implements ActionListener
 	
 	public void getActionListUserBtn (ActionEvent e) throws Exception
 	{
-		
-	}
-	
-	private void getActionListUserBtnAdmin(ActionEvent e) throws Exception
-	{
 		PAllUser pAllUser = new PAllUser (PCenterPanel.TITLE_LIST_USER);
 		
 		centerPanel.removeAll();
 		centerPanel.add(pAllUser, BorderLayout.CENTER);
-		centerPanel.updateUI();		
+		centerPanel.updateUI();
 	}
 	
+		
 	private void getActionCreateUserBtn(ActionEvent e)
 	{
 		
