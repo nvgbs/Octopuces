@@ -3,8 +3,8 @@ package actionlistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import base.dao.DaoFactory;
 import ihm.pagesupprimercompte.FrameSupprimerCompte;
+import metier.user.UserRequest;
 
 public class ValidateDeleteUserListener implements ActionListener
 {
@@ -22,8 +22,7 @@ public class ValidateDeleteUserListener implements ActionListener
 		{
 			try
 			{
-				DaoFactory.getDaoUser().delete(frameSupprimerCompte.getUser());
-				DaoFactory.getDaoContact().delete(frameSupprimerCompte.getUser().getContact());
+				UserRequest.deleteUser(frameSupprimerCompte.getUser());
 				
 			} catch (Exception e1)
 			{

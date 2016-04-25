@@ -18,13 +18,35 @@ public class UserRequest
 	
 	
 	
-	public static User addUser(User user) throws Exception
+	public static void addUser(User user) throws Exception
 	{
-		return DaoFactory.getDaoUser().save(user);
+		DaoFactory.getDaoUser().save(user);
 	}
 	
 	public static void updateUser(User user) throws Exception
 	{
+		DaoFactory.getDaoUser().update(user);
+	}
+	
+	public static void deleteUser(User user) throws Exception
+	{
+		DaoFactory.getDaoUser().delete(user);
+		if (user.getContact() != null)
+		{
+			DaoFactory.getDaoContact().delete(user.getContact());
+		}		
+	}
+	
+	public static void disableEnableUser (User user) throws Exception
+	{
+		if (user.getAccountEnabled().booleanValue() == true)
+		{
+			user.setAccountEnabled(false);
+		}
+		else
+		{
+			user.setAccountEnabled(true);
+		}
 		DaoFactory.getDaoUser().update(user);
 	}
 	
