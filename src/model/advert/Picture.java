@@ -53,6 +53,15 @@ public class Picture extends DataParent
 		this.url = url;
 		this.advert = advert;
 	}
+	
+	public Picture (Integer num, String name, String url, Advert advert)
+	{
+		
+		this.num = num;
+		this.name = name;
+		this.url = url;
+		this.advert = advert;
+	}
 
 
 

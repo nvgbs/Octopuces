@@ -45,7 +45,7 @@ public class PLeftPanel extends JPanel
 		setLayout(gridBagLayout);
 		
 		boardTableBtn.addActionListener(menuListener);
-		boardTableBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Tableau_20x20.png")));
+		boardTableBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_Tableau_20x20.png")));
 		boardTableBtn.setIconTextGap(47);
 		boardTableBtn.setForeground(new Color(70, 130, 180));
 		boardTableBtn.setBackground(new Color(255, 255, 255));
@@ -59,7 +59,7 @@ public class PLeftPanel extends JPanel
 		this.add(boardTableBtn, gbc_boardTableBtn);
 		
 		waitAdvertBtn.addActionListener(menuListener);
-		waitAdvertBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Pencil_20x20.png")));
+		waitAdvertBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_Pencil_20x20.png")));
 		waitAdvertBtn.setIconTextGap(20);
 		waitAdvertBtn.setForeground(new Color(70, 130, 180));
 		waitAdvertBtn.setBackground(new Color(255, 255, 255));
@@ -74,7 +74,7 @@ public class PLeftPanel extends JPanel
 		
 		checkAdvertBtn.addActionListener(menuListener);
 		checkAdvertBtn.setIconTextGap(33);
-		checkAdvertBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_In_20x20.png")));
+		checkAdvertBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_In_20x20.png")));
 		checkAdvertBtn.setForeground(new Color(70, 130, 180));
 		checkAdvertBtn.setBackground(new Color(255, 255, 255));
 		checkAdvertBtn.setFont(new Font("SansSerif", Font.BOLD, 14));
@@ -87,7 +87,7 @@ public class PLeftPanel extends JPanel
 		this.add(checkAdvertBtn, gbc_checkAdvertBtn);
 		
 		refuseAdvertBtn.addActionListener(menuListener);
-		refuseAdvertBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Croix_Refuse_20x20.png")));
+		refuseAdvertBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_Croix_Refuse_20x20.png")));
 		refuseAdvertBtn.setIconTextGap(33);
 		refuseAdvertBtn.setForeground(new Color(70, 130, 180));
 		refuseAdvertBtn.setBackground(new Color(255, 255, 255));
@@ -113,13 +113,13 @@ public class PLeftPanel extends JPanel
 			gbc_createUserBtn.gridx = 0;
 			gbc_createUserBtn.gridy = 5;
 			this.add(createUserBtn, gbc_createUserBtn);
-			createUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
+			createUserBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_Creer_Compte_20x20.png")));
 			createUserBtn.setIconTextGap(54);				
 		}
 		
 		
 			listUserBtn.addActionListener(menuListener);
-			listUserBtn.setIcon(new ImageIcon(PUserList.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
+			listUserBtn.setIcon(new ImageIcon(PLeftPanel.class.getResource("/img/Icone_Utilisateurs_20x20.png")));
 			listUserBtn.setIconTextGap(49);
 			listUserBtn.setForeground(new Color (70, 130, 180));
 			listUserBtn.setBackground(new Color(255, 255, 255));

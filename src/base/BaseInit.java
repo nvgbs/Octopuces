@@ -5,6 +5,7 @@ import java.util.Date;
 import base.dao.DaoFactory;
 import model.advert.Advert;
 import model.advert.Category;
+import model.advert.Picture;
 import model.advert.SubCategory;
 import model.user.Contact;
 import model.user.Region;
@@ -188,10 +189,7 @@ public class BaseInit {
 		User user3 = new User ("Monsieur", "Genre", "Seb", "Seb", "1111", contact3, moderator); 
 		User user4 = new User ("Madame", "Marty", "Jessyka", "Red Fish", "2222", contact4, admin);
 		User user5 = new User ("Monsieur", "Meynadier", "Julien", "Ju", "3333", contact5, admin);
-		
-		
-		
-		
+				
 		
 		DaoFactory.getDaoContact().saveOrUpdate(contact1);
 		DaoFactory.getDaoContact().saveOrUpdate(contact2);
@@ -206,29 +204,7 @@ public class BaseInit {
 		DaoFactory.getDaoUser().saveOrUpdate(user5);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
 		Advert advert1 = new Advert ("Vélo", new Date(), "Vélo des familles", 500.0f, true, true, 0, subca3, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert1);
 		
@@ -247,6 +223,14 @@ public class BaseInit {
 		Advert advert6 = new Advert ("Camionnette", new Date(), "Camionnette des familles", 1500.0f, true, true, 2, subca5, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert6);
 		
+		Picture picture1 = new Picture(1, "velo", "/img/velo.jpg", advert1);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture1);
+		
+		Picture picture2 = new Picture(1, "velo", "/img/velo.jpg", advert1);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture2);
+		
+		Picture picture3 = new Picture(1, "velo", "/img/velo.jpg", advert1);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture3);
 		
 		return true;
 	}

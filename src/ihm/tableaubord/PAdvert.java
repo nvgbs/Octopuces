@@ -6,10 +6,16 @@ import actionlistener.AdvertActionListener;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
+
 import javax.swing.JLabel;
 import model.advert.Advert;
+import model.advert.Picture;
+
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class PAdvert extends JPanel
 {
@@ -21,12 +27,13 @@ public class PAdvert extends JPanel
 	
 	
 	private JButton btnCancel = new JButton();
+	JLabel lblPic;
 	
 	Integer stateValue;
 	
 	
 
-	public PAdvert(Advert advert, Integer stateValue)
+	public PAdvert(Advert advert, Integer stateValue, List<Picture> listPicture)
 	{
 		
 		
@@ -38,7 +45,7 @@ public class PAdvert extends JPanel
 		
 		
 		JLabel DescriptionContent = new JLabel(advert.getDescription());
-		setLayout(new MigLayout("", "[40px][10px][55px][99.00px][][][][][][][][108px][18px][16px][-10.00px][76.00px][81.00px][71.00]", "[16px][23px][16px][20px][23.00px][23px][][][][][][][][][][][][][][][]"));
+		setLayout(new MigLayout("", "[40px][10px][55px][99.00px][][][][][][][][108px][-46.00px][16px][-10.00px][76.00px][81.00px][71.00]", "[16px][23px][16px][20px][23.00px][23px][][][][][][][][][][][][][][][]"));
 		
 		JLabel Date = new JLabel("Date :");
 		Date.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -88,8 +95,23 @@ public class PAdvert extends JPanel
 		btnCancel.setForeground(new Color(255, 255, 255));
 		
 		btnCancel.addActionListener(advertListener);
+		int i = 0;
 		
-		
+		if (listPicture != null)
+		{
+			for (Picture picture : listPicture)
+			{
+				int pos[] = {2,3,4};
+				JLabel lblPic  = new JLabel("");
+				add (lblPic, "cell " + pos[i] + " 18");
+				lblPic.setHorizontalTextPosition(SwingConstants.CENTER);
+				lblPic.setHorizontalAlignment(SwingConstants.CENTER);
+				System.out.println(picture.getUrl().toString());
+				lblPic.setIcon(new ImageIcon(PAdvert.class.getResource("/img/velo.jpg")));
+				i++;
+			}
+		}
+			
 		
 		add(btnCancel, "cell 17 20,alignx left");
 		
