@@ -93,6 +93,7 @@ public class FrameModifCompte extends JFrame
 		textFieldName.setBounds(60, 275, 206, 23);
 		pUpdateAccount.add(textFieldName);
 		textFieldName.setColumns(10);
+		textFieldName.addMouseListener(updateUserListener);
 
 		JLabel lblFirstName = new JLabel("Prénom");
 		lblFirstName.setHorizontalAlignment(SwingConstants.LEFT);
@@ -100,7 +101,8 @@ public class FrameModifCompte extends JFrame
 		lblFirstName.setFont(new Font("SansSerif", Font.BOLD, 15));
 		lblFirstName.setBounds(60, 309, 61, 16);
 		pUpdateAccount.add(lblFirstName);
-
+		
+		
 		textFieldFirstName = new JTextField(user.getFirstName());
 		textFieldFirstName.setBackground(new Color(255, 255, 255));
 		textFieldFirstName.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
@@ -108,6 +110,7 @@ public class FrameModifCompte extends JFrame
 		textFieldFirstName.setBounds(60, 336, 206, 23);
 		pUpdateAccount.add(textFieldFirstName);
 		textFieldFirstName.setColumns(10);
+		textFieldFirstName.addMouseListener(updateUserListener);
 
 		JLabel lblPassword = new JLabel("Mot de passe");
 		lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
@@ -123,6 +126,7 @@ public class FrameModifCompte extends JFrame
 		PasswordFieldPassword.setBounds(60, 468, 206, 23);
 		pUpdateAccount.add(PasswordFieldPassword);
 		PasswordFieldPassword.setColumns(10);
+		PasswordFieldPassword.addMouseListener(updateUserListener);
 
 		JLabel lblPasswordRepeat = new JLabel("Confirmer mot de passe");
 		lblPasswordRepeat.setHorizontalAlignment(SwingConstants.LEFT);
@@ -138,6 +142,7 @@ public class FrameModifCompte extends JFrame
 		PasswordFieldPasswordRepeat.setBounds(60, 539, 206, 23);
 		pUpdateAccount.add(PasswordFieldPasswordRepeat);
 		PasswordFieldPasswordRepeat.setColumns(10);
+		PasswordFieldPasswordRepeat.addMouseListener(updateUserListener);
 
 		JLabel lblDroitAcces = new JLabel("Ajouter droit d'accès");
 		lblDroitAcces.setHorizontalAlignment(SwingConstants.LEFT);
@@ -165,6 +170,7 @@ public class FrameModifCompte extends JFrame
 		textFieldLogin.setBackground(Color.WHITE);
 		textFieldLogin.setBounds(60, 397, 206, 23);
 		pUpdateAccount.add(textFieldLogin);
+		textFieldLogin.addMouseListener(updateUserListener);
 
 		JLabel labelLogin = new JLabel("Login");
 		labelLogin.setHorizontalAlignment(SwingConstants.LEFT);
@@ -201,6 +207,8 @@ public class FrameModifCompte extends JFrame
 		pUpdateAccount.add(btnCancel);
 	}
 
+	
+	
 	public void setTextFieldLogin(JTextField textFieldLogin)
 	{
 		this.textFieldLogin = textFieldLogin;

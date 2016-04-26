@@ -6,6 +6,7 @@ package appli;
 
 import org.hibernate.cfg.Configuration;
 import base.BaseInit;
+import base.dao.DaoFactory;
 import ihm.pageconnexion.FrameLogin;
 
 

@@ -7,6 +7,7 @@ import javax.swing.border.LineBorder;
 
 
 
+
 public class PCenterPanel extends JPanel
 {
 
@@ -19,11 +20,11 @@ public class PCenterPanel extends JPanel
 	public static final String TITLE_DESACTIVED = "ANNONCES DESACTIVEES";	
 	public static final String TITLE_LIST_USER = "LISTE DES UTILISATEURS";
 	
-
-	
 	
 	public PCenterPanel() throws Exception
 	{
+	
+		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new LineBorder(Color.WHITE, 10));
 		this.setBackground(new Color(70, 130, 180));

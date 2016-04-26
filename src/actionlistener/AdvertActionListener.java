@@ -1,8 +1,10 @@
 package actionlistener;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import ihm.tableaubord.PAdvert;
+import ihm.tableaubord.PCenterPanel;
 import metier.advert.AdvertRequest;
 import model.advert.Advert;
 
@@ -12,6 +14,9 @@ public class AdvertActionListener implements ActionListener
 
 	private PAdvert pAdvert = null;
 	private Advert advert = null;
+	private PCenterPanel centerPanel = null;
+	
+
 	
 	
 	
@@ -21,6 +26,7 @@ public class AdvertActionListener implements ActionListener
 	{
 		this.pAdvert = pAdvert;
 		this.advert = advert;
+		
 	}
 	
 	
@@ -38,9 +44,7 @@ public class AdvertActionListener implements ActionListener
 			{				
 				e1.printStackTrace();
 			}
-		}
-		
-		
+		}		
 	}
 	
 	
@@ -52,19 +56,14 @@ public class AdvertActionListener implements ActionListener
 	public void getActionBtnCancel(ActionEvent e) throws Exception
 	{
 
-		
-		
 		if (pAdvert.getBtnCancel().getText().equals("Activer"))
 		{
-			AdvertRequest.validateAdvert(advert);
-		
+			AdvertRequest.validateAdvert(advert);		
 		}
 		else 
 		{
-			AdvertRequest.unvalidateAdvert(advert);
-			
-		}
-		
+			AdvertRequest.unvalidateAdvert(advert);			
+		}		
 				
 	}
 	

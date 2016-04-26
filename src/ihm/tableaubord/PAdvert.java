@@ -32,6 +32,7 @@ public class PAdvert extends JPanel
 	Integer stateValue;
 	
 	
+	
 
 	public PAdvert(Advert advert, Integer stateValue, List<Picture> listPicture)
 	{

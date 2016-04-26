@@ -144,6 +144,8 @@ public class CreateUserListener implements ActionListener, MouseListener
 			
 			UserRequest.addUser(user);
 			
+			frameAjoutCompte.dispose();
+			
 			
 			
 		}
@@ -157,6 +159,8 @@ public class CreateUserListener implements ActionListener, MouseListener
 			User user = new User(civility, firstName, name, login , password, moderator);								
 			
 			UserRequest.addUser(user);
+			
+			frameAjoutCompte.dispose();
 			
 			
 		}	

@@ -5,15 +5,19 @@ import java.awt.event.ActionListener;
 
 
 import ihm.pagedesactivercompte.FrameDesactiverCompte;
+import metier.advert.AdvertRequest;
 import metier.user.UserRequest;
+import model.user.User;
 
 public class ValidateDisableUserListener implements ActionListener
 {
 	FrameDesactiverCompte frameDesactiverCompte;
+	User user;
 	
-	public ValidateDisableUserListener(FrameDesactiverCompte frameDesactiverCompte)
+	public ValidateDisableUserListener(FrameDesactiverCompte frameDesactiverCompte, User user)
 	{
 		this.frameDesactiverCompte = frameDesactiverCompte;
+		this.user = user;
 	}
 
 	@Override
@@ -23,11 +27,21 @@ public class ValidateDisableUserListener implements ActionListener
 		{
 			try
 			{
+				if (frameDesactiverCompte.getUser().getAccountEnabled() == true)
+				{	
+					
+				AdvertRequest.disableAdvertFromUser(frameDesactiverCompte.getUser().getId());	
+				
+				}
+				
 				UserRequest.disableEnableUser(frameDesactiverCompte.getUser());
 				
-			} catch (Exception e1)
+				frameDesactiverCompte.dispose();
+				
+			} 
+			catch (Exception e1)
 			{
-				// TODO Auto-generated catch block
+				
 				e1.printStackTrace();
 			}
 		}

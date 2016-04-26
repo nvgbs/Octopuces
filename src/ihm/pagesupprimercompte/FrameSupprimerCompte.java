@@ -52,10 +52,14 @@ public class FrameSupprimerCompte extends JFrame
 		labelAreYouSure.setFont(new Font("Arial", Font.BOLD, 13));
 		labelAreYouSure.setBounds(0, 124, 584, 16);
 		getContentPane().add(labelAreYouSure);
+		btnYes.setBackground(new Color(255, 255, 255));
+		btnYes.setForeground(new Color(70, 130, 180));
 		
 		btnYes.setBounds(168, 173, 89, 23);
 		getContentPane().add(btnYes);
 		btnYes.addActionListener(validateDeleteUserListener);
+		btnNo.setBackground(new Color(255, 255, 255));
+		btnNo.setForeground(new Color(70, 130, 180));
 		
 		
 		btnNo.setBounds(328, 173, 89, 23);

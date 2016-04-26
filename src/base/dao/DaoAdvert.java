@@ -30,4 +30,37 @@ public class DaoAdvert extends DaoParent
 
 		return listResult;
 	}
-}
+	
+	
+	public List<Advert> getAdvertFromUser(Integer idValue)throws Exception
+	{
+
+		Session session = BaseSession.getNewSession();
+
+		Criteria criteria = session.createCriteria(Advert.class);
+		
+		criteria.add(Restrictions.eq("user.id", idValue.intValue()));
+
+		@SuppressWarnings("unchecked")
+		ArrayList<Advert> listResult = (ArrayList<Advert>) criteria.list();
+
+		session.close();
+
+		return listResult;
+	}
+	
+	
+	
+}//END
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
