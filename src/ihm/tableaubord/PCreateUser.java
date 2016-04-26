@@ -84,8 +84,7 @@ public class PCreateUser extends JPanel {
 		JLabel label = new JLabel("");
 		label.setVerticalAlignment(SwingConstants.TOP);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setIcon(new ImageIcon("C:\\Users\\JeSsyKa\\workspace\\IHMProjet\\img\\Icone_Aide_20x20.png"));
-		//label.setText("<html><a href=\"\" img= C:\\Users\\JeSsyKa\\workspace\\IHMProjet\\img\\Icone_Aide_20x20.png></a></html>");
+		label.setIcon(new ImageIcon("C:\\Users\\JeSsyKa\\workspace\\IHMProjet\\img\\Icone_Aide_20x20.png"));		
 		label.setBounds(955, 6, 20, 23);
 		panel.add(label);
 		

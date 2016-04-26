@@ -22,7 +22,7 @@ public class PGridLayoutForAdvert extends JPanel
 		
 		for (Advert advert : listAdvert) {
 			
-			this.add(new PAdvert(advert));
+			this.add(new PAdvert(advert, stateValue));
 			
 		}
 	}

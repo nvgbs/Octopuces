@@ -50,6 +50,7 @@ public class UpdateUserListener implements ActionListener
 		
 		Role admin = new Role (Role.NUM_ROLE_ADMINISTRATEUR, "Admin");
 		Role moderator = new Role (Role.NUM_ROLE_MODERATEUR, "Moderateur");
+		Role userRole = new Role (Role.NUM_ROLE_USER, "Utilisateur");
 		
 		String name = null;
 		String firstName = null;
@@ -121,6 +122,24 @@ public class UpdateUserListener implements ActionListener
 			
 			
 		}
+		else if ((allCheck == true) && (user.getRole().getId() == Role.NUM_ROLE_USER))
+		{
+			
+			name = frameModifCompte.getTextFieldName().getText();
+			firstName = frameModifCompte.getTextFieldFirstName().getText();
+			login = frameModifCompte.getTextFieldLogin().getText();
+			password = new String (frameModifCompte.getPasswordFieldPassword().getPassword());
+			user.setCivility(civility);
+			user.setFirstName(firstName);
+			user.setName(name);
+			user.setLogin(login);
+			user.setPassword(password);
+			user.setRole(userRole);
+											
+			
+			UserRequest.updateUser(user);
+		}
+		
 		else if (allCheck == true)
 		{
 			
