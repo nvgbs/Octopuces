@@ -23,6 +23,7 @@ public class ValidateDeleteUserListener implements ActionListener
 			try
 			{
 				UserRequest.deleteUser(frameSupprimerCompte.getUser());
+				frameSupprimerCompte.dispose();
 				
 			} catch (Exception e1)
 			{

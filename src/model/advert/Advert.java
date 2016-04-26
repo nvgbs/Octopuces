@@ -68,7 +68,7 @@ public class Advert extends DataParent {
 	@NotNull
 	private SubCategory subCategory = null;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "usr_id")
 	@NotNull
 	private User user = null;

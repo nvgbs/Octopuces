@@ -4,7 +4,6 @@ import java.util.List;
 
 
 import base.dao.DaoFactory;
-
 import model.advert.Advert;
 
 public class AdvertRequest 
@@ -31,6 +30,20 @@ public class AdvertRequest
 	{
 		return DaoFactory.getDaoAdvert().readByState(stateValue.intValue());
 		
+	}
+	
+	
+	
+	public static void disableAdvertFromUser (Integer idValue) throws Exception
+	{
+		List <Advert> listAdvert = DaoFactory.getDaoAdvert().getAdvertFromUser(idValue);
+		
+		for (Advert advert : listAdvert) 
+		{			
+			advert.setState(Advert.UNVALIDATE_STATE);
+			
+			DaoFactory.getDaoAdvert().saveOrUpdate(advert);	
+		}
 	}
 	
 	

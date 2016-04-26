@@ -1,19 +1,25 @@
 package actionlistener;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import ihm.pagemodifcompte.FrameModifCompte;
+
 import metier.user.UserRequest;
+
 import model.user.Role;
 import model.user.User;
 
-public class UpdateUserListener implements ActionListener
+public class UpdateUserListener implements ActionListener, MouseListener
 {
 
 	private FrameModifCompte frameModifCompte;
 	private User user;
+	
 
 	public UpdateUserListener(FrameModifCompte frameModifCompte, User user)
 	{
@@ -40,6 +46,45 @@ public class UpdateUserListener implements ActionListener
 		}
 
 	}
+	
+	
+	public void mouseClicked(MouseEvent e) 
+	{
+		if (e.getSource() == frameModifCompte.getTextFieldName())
+		{
+			frameModifCompte.getLblNameFail().setText("");
+		}
+		else if (e.getSource() == frameModifCompte.getTextFieldFirstName())
+		{
+			frameModifCompte.getLblFirstNameFail().setText("");
+		}
+		else if (e.getSource() == frameModifCompte.getTextFieldLogin())
+		{
+			frameModifCompte.getLblLoginFail().setText("");
+		}
+		else if (e.getSource() == frameModifCompte.getPasswordFieldPassword())
+		{
+			frameModifCompte.getLblPasswordFail().setText("");
+		}
+		else if (e.getSource() == frameModifCompte.getPasswordFieldPasswordRepeat())
+		{
+			frameModifCompte.getLblPasswordFail().setText("");
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	private void getUpdateUser(ActionEvent e) throws Exception
 	{
@@ -60,7 +105,6 @@ public class UpdateUserListener implements ActionListener
 		
 		String civility = frameModifCompte.getComboBoxCivility().getSelectedItem().toString();
 
-		
 		
 		
 		if (frameModifCompte.getTextFieldName().getText().length() == 0)
@@ -119,6 +163,8 @@ public class UpdateUserListener implements ActionListener
 			
 			UserRequest.updateUser(user);
 			
+			frameModifCompte.dispose();
+			
 			
 			
 		}
@@ -138,6 +184,8 @@ public class UpdateUserListener implements ActionListener
 											
 			
 			UserRequest.updateUser(user);
+			
+			frameModifCompte.dispose();
 		}
 		
 		else if (allCheck == true)
@@ -156,6 +204,8 @@ public class UpdateUserListener implements ActionListener
 											
 			
 			UserRequest.updateUser(user);
+			
+			frameModifCompte.dispose();
 		}
 	
 	}
@@ -166,5 +216,31 @@ public class UpdateUserListener implements ActionListener
 	{
 		frameModifCompte.dispose();
 
+	}
+
+	
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
