@@ -21,7 +21,7 @@ public class DaoUser extends DaoParent
 		Session session = BaseSession.getNewSession();
 
 		Criteria criteria = session.createCriteria(User.class);
-		criteria.add(Restrictions.eq("role", stateValue.intValue()));
+		criteria.add(Restrictions.eq("role.id", stateValue.intValue()));
 
 		@SuppressWarnings("unchecked")
 		ArrayList<User> listResult = (ArrayList<User>) criteria.list();

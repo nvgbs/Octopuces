@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import ihm.pagesupprimercompte.FrameSupprimerCompte;
+import ihm.tableaubord.MainFrame;
+import ihm.tableaubord.PCenterPanel;
+import ihm.tableaubord.PLeftPanel;
 import metier.user.UserRequest;
 
 public class ValidateDeleteUserListener implements ActionListener
@@ -13,6 +16,8 @@ public class ValidateDeleteUserListener implements ActionListener
 	public ValidateDeleteUserListener(FrameSupprimerCompte frameSupprimerCompte)
 	{
 		this.frameSupprimerCompte = frameSupprimerCompte;
+		
+		
 	}
 
 	@Override
@@ -22,7 +27,7 @@ public class ValidateDeleteUserListener implements ActionListener
 		{
 			try
 			{
-				UserRequest.deleteUser(frameSupprimerCompte.getUser());
+				UserRequest.deleteUser(frameSupprimerCompte.getUser(), MainFrame.getCenterPanel());
 				frameSupprimerCompte.dispose();
 				
 			} catch (Exception e1)

@@ -3,6 +3,8 @@ package actionlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import ihm.tableaubord.MainFrame;
 import ihm.tableaubord.PAdvert;
 import ihm.tableaubord.PCenterPanel;
 import metier.advert.AdvertRequest;
@@ -60,10 +62,15 @@ public class AdvertActionListener implements ActionListener
 		{
 			AdvertRequest.validateAdvert(advert);		
 		}
-		else 
+		else if (pAdvert.getBtnCancel().getText().equals("Désactiver"))
 		{
-			AdvertRequest.unvalidateAdvert(advert);			
-		}		
+			AdvertRequest.unvalidateAdvert(advert,MainFrame.getCenterPanel());			
+		}
+		else if (pAdvert.getBtnCancel().getText().equals("Refuser"))
+		{
+			
+		}
+		
 				
 	}
 	

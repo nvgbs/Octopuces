@@ -14,9 +14,11 @@ public class PAllUser extends JPanel
 
 	private static final long serialVersionUID = 1L;
 	
-	public PAllUser(String title) throws Exception
+	private Boolean admin;
+	
+	public PAllUser(String title, Boolean admin) throws Exception
 	{
-		
+		this.admin= admin;
 		this.setBackground(new Color(70, 130, 180));
 		setLayout(new BorderLayout(0, 0));
 		
@@ -29,7 +31,7 @@ public class PAllUser extends JPanel
 		JLabel LabelQuiSertARien = new JLabel(" ");
 		add(LabelQuiSertARien, BorderLayout.SOUTH);
 		
-		PGridLayoutForUser gridLayoutForUser = new PGridLayoutForUser();
+		PGridLayoutForUser gridLayoutForUser = new PGridLayoutForUser(admin);
 		add(gridLayoutForUser, BorderLayout.CENTER);
 		
 		JScrollPane scroll = new JScrollPane(gridLayoutForUser);

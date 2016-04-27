@@ -8,6 +8,8 @@ public class MainFrame extends JFrame
 {
 	
 	private static final long serialVersionUID = 1L;
+	
+	private static PCenterPanel centerPanel = null;
 		
 	
 	public MainFrame(Boolean admin) throws Exception
@@ -21,12 +23,21 @@ public class MainFrame extends JFrame
 		JPanel tableauBord = (JPanel)this.getContentPane();
 		tableauBord.setLayout(new BorderLayout());
 		
-		PCenterPanel centerPanel = new PCenterPanel();
+		MainFrame.centerPanel = new PCenterPanel(admin);
 		
 		tableauBord.add(new PLeftPanel(centerPanel, admin), BorderLayout.WEST);
 		tableauBord.add(new PNorthPanel(), BorderLayout.NORTH);
 		tableauBord.add(centerPanel, BorderLayout.CENTER);
 	}
+
+
+	public static PCenterPanel getCenterPanel()
+	{
+		return centerPanel;
+	}
+
+
+	
 	
 	
 }

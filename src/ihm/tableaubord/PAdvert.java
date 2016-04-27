@@ -121,7 +121,11 @@ public class PAdvert extends JPanel
 		{
 			btnCancel.setText("Désactiver");
 		}
-		else
+		else if (stateValue == Advert.UNVALIDATE_STATE)
+		{
+			btnCancel.setText("Réactiver");
+		}
+		else if (stateValue == Advert.WAIT_STATE)
 		{
 			btnCancel.setText("Activer");
 		}

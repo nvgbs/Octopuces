@@ -160,11 +160,11 @@ public class ActionMenuListener implements ActionListener
 	
 	public void getActionListUserBtn (ActionEvent e) throws Exception
 	{
-		PAllUser pAllUser = new PAllUser (PCenterPanel.TITLE_LIST_USER);
+		PAllUser pAllUser = new PAllUser (PCenterPanel.TITLE_LIST_USER, centerPanel.getAdmin());
 		
-		centerPanel.removeAll();
-		centerPanel.add(pAllUser, BorderLayout.CENTER);
-		centerPanel.updateUI();
+			centerPanel.removeAll();
+			centerPanel.add(pAllUser, BorderLayout.CENTER);
+			centerPanel.updateUI();				
 	}
 	
 		

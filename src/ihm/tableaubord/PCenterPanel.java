@@ -14,6 +14,7 @@ public class PCenterPanel extends JPanel
 	
 	private static final long serialVersionUID = 1L;
 
+	private Boolean admin;
 	
 	public static final String TITLE_WAIT = "ANNONCES A MODERER";
 	public static final String TITLE_VALIDATE = "ANNONCES VALIDEES";
@@ -21,16 +22,18 @@ public class PCenterPanel extends JPanel
 	public static final String TITLE_LIST_USER = "LISTE DES UTILISATEURS";
 	
 	
-	public PCenterPanel() throws Exception
+	public PCenterPanel(Boolean admin)
 	{
 	
-		
+		this.admin = admin;
 		this.setLayout(new BorderLayout());
 		this.setBorder(new LineBorder(Color.WHITE, 10));
-		this.setBackground(new Color(70, 130, 180));
-				
-		
-		
+		this.setBackground(new Color(70, 130, 180));		
+	}
+	
+	public Boolean getAdmin()
+	{
+		return admin;
 	}
 
 	

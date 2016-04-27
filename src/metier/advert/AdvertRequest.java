@@ -1,9 +1,13 @@
 package metier.advert;
 
+import java.awt.BorderLayout;
 import java.util.List;
 
 
 import base.dao.DaoFactory;
+import ihm.tableaubord.MainFrame;
+import ihm.tableaubord.PAllAdvert;
+import ihm.tableaubord.PCenterPanel;
 import model.advert.Advert;
 
 public class AdvertRequest 
@@ -13,15 +17,23 @@ public class AdvertRequest
 	{
 		advert.setState(Advert.VALIDATE_STATE);
 		
-		DaoFactory.getDaoAdvert().saveOrUpdate(advert);		
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert);
+		
+		
 	}
 	
 	
-	public static void unvalidateAdvert (Advert advert) throws Exception
+	public static void unvalidateAdvert (Advert advert, PCenterPanel centerPanel) throws Exception
 	{
 		advert.setState(Advert.UNVALIDATE_STATE);
 		
-		DaoFactory.getDaoAdvert().saveOrUpdate(advert);		
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert);	
+		
+		PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_VALIDATE, Advert.VALIDATE_STATE);
+		
+		centerPanel.removeAll();
+		centerPanel.add(pAllAdvert, BorderLayout.CENTER);
+		centerPanel.updateUI();	
 	}
 	
 	

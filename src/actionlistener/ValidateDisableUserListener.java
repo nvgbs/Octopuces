@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 
 import ihm.pagedesactivercompte.FrameDesactiverCompte;
+import ihm.tableaubord.MainFrame;
 import metier.advert.AdvertRequest;
 import metier.user.UserRequest;
 import model.user.User;
@@ -34,7 +35,7 @@ public class ValidateDisableUserListener implements ActionListener
 				
 				}
 				
-				UserRequest.disableEnableUser(frameDesactiverCompte.getUser());
+				UserRequest.disableEnableUser(frameDesactiverCompte.getUser(), MainFrame.getCenterPanel());
 				
 				frameDesactiverCompte.dispose();
 				

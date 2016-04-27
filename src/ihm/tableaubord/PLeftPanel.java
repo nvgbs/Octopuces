@@ -28,7 +28,7 @@ public class PLeftPanel extends JPanel
 	
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	public PLeftPanel(PCenterPanel centerPanel, Boolean admin)
 	{
 		ActionMenuListener menuListener = new ActionMenuListener(this, centerPanel);
