@@ -36,17 +36,28 @@ public class AdvertActionListener implements ActionListener
 	
 	public void actionPerformed (ActionEvent e)
 	{
-		if (e.getSource() == pAdvert.getBtnCancel())
+		if (e.getSource() == pAdvert.getBtnAccept())
 		{
 			try 
 			{
-				getActionBtnCancel(e);
+				getActionBtnAccept(e);
 			}
 			catch (Exception e1) 
 			{				
 				e1.printStackTrace();
 			}
-		}		
+		}	
+		if (e.getSource() == pAdvert.getBtnRefuse())
+		{
+			try 
+			{
+				getActionBtnRefuse(e);
+			} 
+			catch (Exception e1)
+			{				
+				e1.printStackTrace();
+			}
+		}
 	}
 	
 	
@@ -55,26 +66,31 @@ public class AdvertActionListener implements ActionListener
 	
 	
 	
-	public void getActionBtnCancel(ActionEvent e) throws Exception
+	public void getActionBtnAccept(ActionEvent e) throws Exception
 	{
 
-		if (pAdvert.getBtnCancel().getText().equals("Activer"))
+		if (pAdvert.getBtnAccept().getText().equals("Activer"))
 		{
-			AdvertRequest.validateAdvert(advert);		
+			AdvertRequest.validateAdvert(advert, MainFrame.getCenterPanel());		
 		}
-		else if (pAdvert.getBtnCancel().getText().equals("Désactiver"))
+		else if (pAdvert.getBtnAccept().getText().equals("Désactiver"))
 		{
 			AdvertRequest.unvalidateAdvert(advert,MainFrame.getCenterPanel());			
 		}
-		else if (pAdvert.getBtnCancel().getText().equals("Refuser"))
+		else if (pAdvert.getBtnAccept().getText().equals("Réactiver"))
 		{
-			
+			AdvertRequest.validateAdvert2(advert, MainFrame.getCenterPanel());
 		}
 		
-				
 	}
 	
-	
+	public void getActionBtnRefuse(ActionEvent e) throws Exception 
+	{
+		AdvertRequest.unvalidateAdvert2(advert, MainFrame.getCenterPanel());
+	}
+			
+		
+			
 	
 	
 	

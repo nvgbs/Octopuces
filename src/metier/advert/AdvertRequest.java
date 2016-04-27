@@ -2,10 +2,7 @@ package metier.advert;
 
 import java.awt.BorderLayout;
 import java.util.List;
-
-
 import base.dao.DaoFactory;
-import ihm.tableaubord.MainFrame;
 import ihm.tableaubord.PAllAdvert;
 import ihm.tableaubord.PCenterPanel;
 import model.advert.Advert;
@@ -13,14 +10,45 @@ import model.advert.Advert;
 public class AdvertRequest 
 {
 	
-	public static void validateAdvert (Advert advert) throws Exception
-	{
-		advert.setState(Advert.VALIDATE_STATE);
+	public static void validateAdvert (Advert advert, PCenterPanel centerPanel) throws Exception
+	{	
+	
+			advert.setState(Advert.VALIDATE_STATE);
 		
-		DaoFactory.getDaoAdvert().saveOrUpdate(advert);
+			DaoFactory.getDaoAdvert().saveOrUpdate(advert);
+				
+		
+			PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_WAIT, Advert.WAIT_STATE);
+			centerPanel.removeAll();
+			centerPanel.add(pAllAdvert, BorderLayout.CENTER);
+			centerPanel.updateUI();	
+				
+		
 		
 		
 	}
+	
+	
+	public static void validateAdvert2 (Advert advert, PCenterPanel centerPanel) throws Exception
+	{	
+		advert.setState(Advert.VALIDATE_STATE);
+		
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert);
+			
+	
+			PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_DESACTIVED, Advert.UNVALIDATE_STATE);
+			centerPanel.removeAll();
+			centerPanel.add(pAllAdvert, BorderLayout.CENTER);
+			centerPanel.updateUI();	
+		
+			
+		
+		
+		
+				
+		
+	}
+	
 	
 	
 	public static void unvalidateAdvert (Advert advert, PCenterPanel centerPanel) throws Exception
@@ -30,6 +58,19 @@ public class AdvertRequest
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert);	
 		
 		PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_VALIDATE, Advert.VALIDATE_STATE);
+		
+		centerPanel.removeAll();
+		centerPanel.add(pAllAdvert, BorderLayout.CENTER);
+		centerPanel.updateUI();	
+	}
+	
+	public static void unvalidateAdvert2 (Advert advert, PCenterPanel centerPanel) throws Exception
+	{
+		advert.setState(Advert.UNVALIDATE_STATE);
+		
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert);	
+		
+		PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_WAIT, Advert.WAIT_STATE);
 		
 		centerPanel.removeAll();
 		centerPanel.add(pAllAdvert, BorderLayout.CENTER);

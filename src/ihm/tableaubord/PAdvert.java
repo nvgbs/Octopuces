@@ -26,8 +26,9 @@ public class PAdvert extends JPanel
 	
 	
 	
-	private JButton btnCancel = new JButton();
+	private JButton btnAccept = new JButton();
 	JLabel lblPic;
+	JButton btnRefuse = new JButton("Refuser");
 	
 	Integer stateValue;
 	
@@ -92,10 +93,10 @@ public class PAdvert extends JPanel
 				
 		
 		
-		btnCancel.setBackground(new Color(70, 130, 180));
-		btnCancel.setForeground(new Color(255, 255, 255));
+		btnAccept.setBackground(new Color(70, 130, 180));
+		btnAccept.setForeground(new Color(255, 255, 255));
 		
-		btnCancel.addActionListener(advertListener);
+		btnAccept.addActionListener(advertListener);
 		int i = 0;
 		
 		if (listPicture != null)
@@ -112,22 +113,30 @@ public class PAdvert extends JPanel
 				i++;
 			}
 		}
+		btnRefuse.addActionListener(advertListener);
+		if (stateValue == 0)
+		{
+			add(btnRefuse,"cell 17 20,alignx left" );
+			btnRefuse.setBackground(new Color(70, 130, 180));
+			btnRefuse.setForeground(new Color(255, 255, 255));
+		}
+		
 			
 		
-		add(btnCancel, "cell 17 20,alignx left");
+		add(btnAccept, "cell 16 20");
 		
 		
 		if (stateValue ==  Advert.VALIDATE_STATE)
 		{
-			btnCancel.setText("Désactiver");
+			btnAccept.setText("Désactiver");
 		}
 		else if (stateValue == Advert.UNVALIDATE_STATE)
 		{
-			btnCancel.setText("Réactiver");
+			btnAccept.setText("Réactiver");
 		}
 		else if (stateValue == Advert.WAIT_STATE)
 		{
-			btnCancel.setText("Activer");
+			btnAccept.setText("Activer");
 		}
 		
 			
@@ -141,8 +150,20 @@ public class PAdvert extends JPanel
 
 
 
-	public JButton getBtnCancel() {
-		return btnCancel;
+	public JButton getBtnAccept() {
+		return btnAccept;
+	}
+
+
+
+
+
+
+
+
+
+	public JButton getBtnRefuse() {
+		return btnRefuse;
 	}
 
 
