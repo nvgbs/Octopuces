@@ -46,7 +46,7 @@ public class FrameDesactiverCompte extends JFrame
 		this.setAlwaysOnTop(true);
 		JPanel popUpDelete = (JPanel)this.getContentPane();
 		
-		popUpDelete.setBackground(new Color(57, 147, 184));
+		popUpDelete.setBackground(new Color(70, 130, 180));
 		popUpDelete.setLayout(null);
 		
 		JLabel lblDeleteAccount;
