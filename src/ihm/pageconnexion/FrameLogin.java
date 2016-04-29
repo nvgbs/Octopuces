@@ -9,6 +9,8 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.event.KeyListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -141,6 +143,7 @@ public class FrameLogin extends JFrame
 		textFieldLogin.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
 		textFieldLogin.setFont(new Font("Helvetica Neue", Font.PLAIN, 16));
 		textFieldLogin.setColumns(10);
+		textFieldLogin.addKeyListener(listenerLogin);
 		
 		
 		
@@ -160,6 +163,7 @@ public class FrameLogin extends JFrame
 		textFieldPassword.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(240, 240, 240)));
 		textFieldPassword.setFont(new Font("Helvetica Neue", Font.PLAIN, 16));
 		textFieldPassword.setColumns(10);
+		textFieldPassword.addKeyListener(listenerLogin);
 		
 		btnLogin.addActionListener(listenerLogin);		
 		btnLogin.setForeground(new Color(255, 255, 255));

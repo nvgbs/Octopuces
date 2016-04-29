@@ -2,6 +2,8 @@ package actionlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import model.user.User;
 
 
 
-public class ActionListenerLogin implements ActionListener, MouseListener
+public class ActionListenerLogin implements ActionListener, MouseListener, KeyListener
 {
 
 	private FrameLogin frameLogin = null;
@@ -136,72 +138,6 @@ public class ActionListenerLogin implements ActionListener, MouseListener
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
@@ -226,6 +162,49 @@ public class ActionListenerLogin implements ActionListener, MouseListener
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+	@Override
+	public void keyPressed(KeyEvent e)
+	{
+		
+		
+	}
+
+
+
+
+
+	@Override
+	public void keyReleased(KeyEvent e)
+	{
+		if (e.getKeyCode() == KeyEvent.VK_ENTER)
+		{
+			try
+			{
+				getActionLogin();
+			} catch (Exception e1)
+			{
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+	}
+
+
+
+
+
+	@Override
+	public void keyTyped(KeyEvent arg0)
+	{
 		// TODO Auto-generated method stub
 		
 	}
