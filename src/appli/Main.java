@@ -6,7 +6,6 @@ package appli;
 
 import org.hibernate.cfg.Configuration;
 import base.BaseInit;
-import base.dao.DaoFactory;
 import ihm.pageconnexion.FrameLogin;
 
 
@@ -23,7 +22,7 @@ public class Main {
 			// configure hibernate
 			new Configuration().configure().buildSessionFactory();
 			
-			BaseInit.initData();
+			//BaseInit.initData();
 			
 			result = true;
 

@@ -1,6 +1,8 @@
 package ihm.tableaubord;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -18,6 +20,7 @@ public class MainFrame extends JFrame
 		this.setSize(1366,768);
 		this.setLocationRelativeTo(null);
 		this.setResizable(true);
+		this.setMinimumSize(new Dimension(1366, 768));
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		JPanel tableauBord = (JPanel)this.getContentPane();
