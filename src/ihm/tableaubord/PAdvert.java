@@ -6,6 +6,7 @@ import actionlistener.AdvertActionListener;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.List;
 
 import javax.swing.JLabel;
@@ -13,9 +14,11 @@ import model.advert.Advert;
 import model.advert.Picture;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import net.miginfocom.swing.MigLayout;
 import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class PAdvert extends JPanel
 {
@@ -27,6 +30,7 @@ public class PAdvert extends JPanel
 	
 	
 	private JButton btnAccept = new JButton();
+	JButton btnPic = new JButton("Photos");
 	JLabel lblPic;
 	JButton btnRefuse = new JButton("Refuser");
 	
@@ -40,7 +44,7 @@ public class PAdvert extends JPanel
 		
 		
 		
-		AdvertActionListener advertListener = new AdvertActionListener (this, advert);
+		AdvertActionListener advertListener = new AdvertActionListener (this, advert, listPicture);
 		
 		
 		setBackground(Color.WHITE);
@@ -98,20 +102,13 @@ public class PAdvert extends JPanel
 		
 		btnAccept.addActionListener(advertListener);
 		int i = 0;
+		btnPic.addActionListener(advertListener);
 		
-		if (listPicture != null)
+		if (listPicture.size() > 0)
 		{
-			for (Picture picture : listPicture)
-			{
-				int pos[] = {2,3,4};
-				JLabel lblPic  = new JLabel("");
-				add (lblPic, "cell " + pos[i] + " 18");
-				lblPic.setHorizontalTextPosition(SwingConstants.CENTER);
-				lblPic.setHorizontalAlignment(SwingConstants.CENTER);
-				System.out.println(picture.getUrl().toString());
-				lblPic.setIcon(new ImageIcon(PAdvert.class.getResource("/img/velo.jpg")));
-				i++;
-			}
+			btnPic.setBackground(new Color(70, 130, 180));
+			btnPic.setForeground(new Color(255, 255, 255));
+			add(btnPic, "cell 2 20");			
 		}
 		btnRefuse.addActionListener(advertListener);
 		if (stateValue == 0)
@@ -120,6 +117,8 @@ public class PAdvert extends JPanel
 			btnRefuse.setBackground(new Color(70, 130, 180));
 			btnRefuse.setForeground(new Color(255, 255, 255));
 		}
+		
+		
 		
 			
 		
@@ -143,12 +142,40 @@ public class PAdvert extends JPanel
 	}
 
 	
+	public void showPhotos(List <Picture> listPicture)
+	{
+		JFrame photos = new JFrame("Photos de l'annonce");
+		JPanel panelPhotos = (JPanel) photos.getContentPane();
+		photos.setSize(333*listPicture.size(), 300);
+		photos.setAlwaysOnTop(true);
+		panelPhotos.setBorder(new EmptyBorder(5, 5, 5, 5));
+		panelPhotos.setBackground(new Color(255, 255, 255));
+		panelPhotos.setLayout(new GridLayout());
+		
+		for (Picture picture : listPicture)
+		{
+			JLabel lblPic  = new JLabel("");
+			lblPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+			add (lblPic);
+			lblPic.setIcon(new ImageIcon(PAdvert.class.getResource(picture.getUrl())));
+			panelPhotos.add(lblPic);
+		}
+		photos.setLocationRelativeTo(null);
+		photos.setVisible(true);
+		photos.setResizable(false);
+	}
 	
 	
 	
 	
 
 
+	public JButton getBtnPhotos()
+	{
+		return btnPic;
+	}
+	
+	
 
 	public JButton getBtnAccept() {
 		return btnAccept;

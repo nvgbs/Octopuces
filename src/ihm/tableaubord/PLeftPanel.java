@@ -18,14 +18,14 @@ import javax.swing.JLabel;
 
 public class PLeftPanel extends JPanel
 {
-	private JButton disconnectBtn = new JButton("Deconnexion");
-	private JButton listUserBtn = new JButton("Liste utilisateurs");
+	private JButton disconnectBtn = new JButton("Quitter                  ");
+	private JButton listUserBtn = new JButton("Liste utilisateurs       ");
 	private JButton listUserBtnAdmin = new JButton("Liste utilisateurs");
-	private JButton boardTableBtn = new JButton("Tableau de bord");
-	private JButton waitAdvertBtn = new JButton("Annonces en attente");
-	private JButton checkAdvertBtn = new JButton("Annonces Validées");
-	private JButton refuseAdvertBtn = new JButton("Annonces Désactivées");
-	private JButton createUserBtn = new JButton("Créer utilisateur");
+	private JButton boardTableBtn = new JButton("Tableau de bord        ");
+	private JButton waitAdvertBtn = new JButton("Annonces en attente      ");
+	private JButton checkAdvertBtn = new JButton("Annonces Validées       ");
+	private JButton refuseAdvertBtn = new JButton("Annonces Désactivées ");
+	private JButton createUserBtn = new JButton("Créer utilisateur       ");
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -151,7 +151,7 @@ public class PLeftPanel extends JPanel
 			listUserBtn.setIconTextGap(49);
 			listUserBtn.setForeground(new Color (70, 130, 180));
 			listUserBtn.setBackground(new Color(255, 255, 255));
-			listUserBtn.setFont(new Font ("Helvetica", Font.BOLD, 14));
+			listUserBtn.setFont(new Font("SansSerif", Font.BOLD, 14));
 			listUserBtn.setBorder(new LineBorder (new Color (70, 130, 180), 2));
 			GridBagConstraints gbc_listUserBtn = new GridBagConstraints();
 			gbc_listUserBtn.fill = GridBagConstraints.BOTH;

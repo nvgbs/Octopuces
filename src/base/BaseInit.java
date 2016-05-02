@@ -205,7 +205,7 @@ public class BaseInit {
 		
 		
 				
-		Advert advert1 = new Advert ("Vélo", new Date(), "Vélo des familles", 500.0f, true, true, 0, subca3, user1);
+		Advert advert1 = new Advert ("VTT de la mort", new Date(), "super vtt qui passe partout très vite", 100.0f, true, true, 0, subca3, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert1);
 		
 		Advert advert2 = new Advert ("Moto", new Date(), "Moto des familles", 1000.0f, true, true, 1, subca2, user1);
@@ -223,14 +223,41 @@ public class BaseInit {
 		Advert advert6 = new Advert ("Camionnette", new Date(), "Camionnette des familles", 1500.0f, true, true, 2, subca5, user1);
 		DaoFactory.getDaoAdvert().saveOrUpdate(advert6);
 		
-		Picture picture1 = new Picture(1, "velo", "/img/velo.jpg", advert1);
+		Advert advert7 = new Advert ("Lotus Exige", new Date(), "Je vends ma super voiture qui roule très vite", 12000.0f, true, true, 0, subca1, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert7);
+		
+		Advert advert8 = new Advert ("Sony Vaio", new Date(), "Je vends mon ordinateur qui est super rapide et cool. Il tourne sous Windows 11 !!", 300.0f, true, true, 0, subca7, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert8);
+		
+		Advert advert9 = new Advert ("Raquette de tennis Slazenger", new Date(), "Je vends ma raquette de tennis qui ne loupe aucune balle et sert très fort !!!", 99.0f, true, true, 0, subca24, user1);
+		DaoFactory.getDaoAdvert().saveOrUpdate(advert9);
+		
+		Picture picture1 = new Picture(1, "vtt_1", "/img/advert_pic/vtt/vtt_1.jpg", advert1);
 		DaoFactory.getDaoPicture().saveOrUpdate(picture1);
 		
-		Picture picture2 = new Picture(1, "velo", "/img/velo.jpg", advert1);
+		Picture picture2 = new Picture(1, "vtt_2", "/img/advert_pic/vtt/vtt_2.jpg", advert1);
 		DaoFactory.getDaoPicture().saveOrUpdate(picture2);
 		
-		Picture picture3 = new Picture(1, "velo", "/img/velo.jpg", advert1);
+		Picture picture3 = new Picture(1, "vtt_3", "/img/advert_pic/vtt/vtt_3.jpg", advert1);
 		DaoFactory.getDaoPicture().saveOrUpdate(picture3);
+		
+		Picture picture4 = new Picture(1, "lotus_1", "/img/advert_pic/lotus/lotus_1.jpg", advert7);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture4);
+		
+		Picture picture5 = new Picture(1, "lotus_2", "/img/advert_pic/lotus/lotus_2.jpg", advert7);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture5);
+		
+		Picture picture6 = new Picture(1, "lotus_3", "/img/advert_pic/lotus/lotus_3.jpg", advert7);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture6);
+		
+		Picture picture7 = new Picture(1, "vaio_1", "/img/advert_pic/ordinateur/vaio_1.jpg", advert8);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture7);
+		
+		Picture picture8 = new Picture(1, "raquette_1", "/img/advert_pic/raquette/raquette_1.jpg", advert9);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture8);
+		
+		Picture picture9 = new Picture(1, "raquette_2", "/img/advert_pic/raquette/raquette_2.jpg", advert9);
+		DaoFactory.getDaoPicture().saveOrUpdate(picture9);
 		
 		return true;
 	}

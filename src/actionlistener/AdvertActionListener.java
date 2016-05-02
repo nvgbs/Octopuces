@@ -3,12 +3,14 @@ package actionlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import ihm.tableaubord.MainFrame;
 import ihm.tableaubord.PAdvert;
 import ihm.tableaubord.PCenterPanel;
 import metier.advert.AdvertRequest;
 import model.advert.Advert;
+import model.advert.Picture;
 
 
 public class AdvertActionListener implements ActionListener
@@ -16,6 +18,7 @@ public class AdvertActionListener implements ActionListener
 
 	private PAdvert pAdvert = null;
 	private Advert advert = null;
+	private List<Picture> listPicture = null;
 	private PCenterPanel centerPanel = null;
 	
 
@@ -24,10 +27,11 @@ public class AdvertActionListener implements ActionListener
 	
 	
 	
-	public AdvertActionListener (PAdvert pAdvert, Advert advert)
+	public AdvertActionListener (PAdvert pAdvert, Advert advert, List<Picture> listPicture)
 	{
 		this.pAdvert = pAdvert;
 		this.advert = advert;
+		this.listPicture = listPicture;
 		
 	}
 	
@@ -47,7 +51,7 @@ public class AdvertActionListener implements ActionListener
 				e1.printStackTrace();
 			}
 		}	
-		if (e.getSource() == pAdvert.getBtnRefuse())
+		else if (e.getSource() == pAdvert.getBtnRefuse())
 		{
 			try 
 			{
@@ -58,6 +62,10 @@ public class AdvertActionListener implements ActionListener
 				e1.printStackTrace();
 			}
 		}
+		else if (e.getSource() == pAdvert.getBtnPhotos())
+		{
+			getBtnPhotos(e);
+		}
 	}
 	
 	
@@ -66,6 +74,15 @@ public class AdvertActionListener implements ActionListener
 	
 	
 	
+	private void getBtnPhotos(ActionEvent e)
+	{
+		pAdvert.showPhotos(listPicture);
+		
+	}
+
+
+
+
 	public void getActionBtnAccept(ActionEvent e) throws Exception
 	{
 
