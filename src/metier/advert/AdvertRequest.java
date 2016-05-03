@@ -3,6 +3,7 @@ package metier.advert;
 import java.awt.BorderLayout;
 import java.util.List;
 import base.dao.DaoFactory;
+import ihm.FrameErrorEnableAdvert.FrameErrorEnableAdvert;
 import ihm.tableaubord.PAllAdvert;
 import ihm.tableaubord.PCenterPanel;
 import model.advert.Advert;
@@ -31,15 +32,24 @@ public class AdvertRequest
 	
 	public static void validateAdvert2 (Advert advert, PCenterPanel centerPanel) throws Exception
 	{	
-		advert.setState(Advert.VALIDATE_STATE);
-		
-		DaoFactory.getDaoAdvert().saveOrUpdate(advert);
+		if (advert.getUser().getAccountEnabled())
+		{
+			advert.setState(Advert.VALIDATE_STATE);
 			
-	
-			PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_DESACTIVED, Advert.UNVALIDATE_STATE);
-			centerPanel.removeAll();
-			centerPanel.add(pAllAdvert, BorderLayout.CENTER);
-			centerPanel.updateUI();	
+			DaoFactory.getDaoAdvert().saveOrUpdate(advert);
+				
+		
+				PAllAdvert pAllAdvert = new PAllAdvert(PCenterPanel.TITLE_DESACTIVED, Advert.UNVALIDATE_STATE);
+				centerPanel.removeAll();
+				centerPanel.add(pAllAdvert, BorderLayout.CENTER);
+				centerPanel.updateUI();
+		}
+		else
+		{
+			new FrameErrorEnableAdvert(advert.getUser()).setVisible(true);
+		}
+		
+			
 		
 			
 		
