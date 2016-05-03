@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import ihm.pageajoutcompte.FrameAjoutCompte;
+import ihm.tableaubord.MainFrame;
 import metier.user.UserRequest;
 import model.user.Role;
 import model.user.User;
@@ -142,7 +143,7 @@ public class CreateUserListener implements ActionListener, MouseListener
 			
 			User user = new User(civility, firstName, name, login , password, admin);								
 			
-			UserRequest.addUser(user);
+			UserRequest.addUser(user, MainFrame.getCenterPanel());
 			
 			frameAjoutCompte.dispose();
 			
@@ -158,9 +159,10 @@ public class CreateUserListener implements ActionListener, MouseListener
 			
 			User user = new User(civility, firstName, name, login , password, moderator);								
 			
-			UserRequest.addUser(user);
+			UserRequest.addUser(user, MainFrame.getCenterPanel());
 			
 			frameAjoutCompte.dispose();
+			
 			
 			
 		}	

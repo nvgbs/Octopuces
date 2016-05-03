@@ -8,7 +8,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import ihm.pagemodifcompte.FrameModifCompte;
-
+import ihm.tableaubord.MainFrame;
 import metier.user.UserRequest;
 
 import model.user.Role;
@@ -161,7 +161,7 @@ public class UpdateUserListener implements ActionListener, MouseListener
 			user.setRole(admin);
 											
 			
-			UserRequest.updateUser(user);
+			UserRequest.updateUser(user, MainFrame.getCenterPanel());
 			
 			frameModifCompte.dispose();
 			
@@ -183,7 +183,7 @@ public class UpdateUserListener implements ActionListener, MouseListener
 			user.setRole(userRole);
 											
 			
-			UserRequest.updateUser(user);
+			UserRequest.updateUser(user, MainFrame.getCenterPanel());
 			
 			frameModifCompte.dispose();
 		}
@@ -203,7 +203,7 @@ public class UpdateUserListener implements ActionListener, MouseListener
 			user.setRole(moderator);
 											
 			
-			UserRequest.updateUser(user);
+			UserRequest.updateUser(user, MainFrame.getCenterPanel());
 			
 			frameModifCompte.dispose();
 		}

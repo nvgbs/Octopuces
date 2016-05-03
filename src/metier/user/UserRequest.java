@@ -22,14 +22,26 @@ public class UserRequest
 	
 	
 	
-	public static void addUser(User user) throws Exception
+	public static void addUser(User user, PCenterPanel centerPanel) throws Exception
 	{
 		DaoFactory.getDaoUser().save(user);
+		
+		PAllUser pAllUser = new PAllUser (PCenterPanel.TITLE_LIST_USER, centerPanel.getAdmin());
+		
+			centerPanel.removeAll();
+			centerPanel.add(pAllUser, BorderLayout.CENTER);
+			centerPanel.updateUI();			
 	}
 	
-	public static void updateUser(User user) throws Exception
+	public static void updateUser(User user, PCenterPanel centerPanel) throws Exception
 	{
 		DaoFactory.getDaoUser().update(user);
+		
+		PAllUser pAllUser = new PAllUser (PCenterPanel.TITLE_LIST_USER, centerPanel.getAdmin());
+		
+			centerPanel.removeAll();
+			centerPanel.add(pAllUser, BorderLayout.CENTER);
+			centerPanel.updateUI();
 	}
 	
 	public static void deleteUser(User user, PCenterPanel centerPanel) throws Exception

@@ -35,7 +35,7 @@ public class PNorthPanel extends JPanel
 		JLabel lblOctopuces = new JLabel("OCTOPUCES");
 		lblOctopuces.setHorizontalAlignment(SwingConstants.LEFT);
 		lblOctopuces.setForeground(new Color(255, 255, 255));
-		lblOctopuces.setFont(new Font("French Script MT", Font.BOLD, 40));
+		lblOctopuces.setFont(new Font("SansSerif", Font.BOLD, 34));
 		
 		JLabel lblNewLabel = new JLabel("Aide");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
